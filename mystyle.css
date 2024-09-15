@@ -49,15 +49,31 @@ header {
     justify-content: space-between;
     background-color: var(--tercer-color);
 }
-.btnmenu {
-    padding: 10px 20px;
-    font-size: 16px;
+.home {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+  }
+  .tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    background-color: var(--tercer-color);
+    padding: 15px;
     cursor: pointer;
-}
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  
 .titulo_seccion {
     flex-grow: 1;
     text-align: center;
     margin: 0;
+    color: white;
 }
 
 .card {
