@@ -24,3 +24,21 @@ function updateTime() {
 updateTime();
 // Actualizar la hora y fecha cada minuto
 setInterval(updateTime, 60000);
+
+// Inicializa el mapa centrado en Bogotá
+var map = L.map('map').setView([4.7110, -74.0721], 13); // Coordenadas de Bogotá
+
+// Carga el mapa desde OpenStreetMap
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+// Ejemplo de cómo agregar un marcador en una zona de contaminación
+var marker = L.marker([4.7109886, -74.072092]).addTo(map)
+    .bindPopup('Zona de contaminación aquí')
+    .openPopup();
+
+// Agregar más marcadores
+var marker2 = L.marker([4.676, -74.045]).addTo(map)
+    .bindPopup('Zona contaminada en este punto')
+    .openPopup();
