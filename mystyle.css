@@ -293,3 +293,43 @@ a{
     position: fixed;
     bottom: 0;
 }
+.crear-alerta input,
+.crear-alerta select,
+.crear-alerta textarea {
+    border-radius: 4px;
+    font:inherit;
+    border-color:#22577A;
+    color:#22577A;
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.crear-alerta label {
+    color:#636060;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+}
+
+.crear-alerta textarea {
+  height: 100px;
+}
+
+.container_btn button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px 20px;
+  margin: 10px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.container_btn button:hover {
+  background-color: #45a049;
+}
