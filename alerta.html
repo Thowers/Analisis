@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>la alerta</title>
+    <link rel="stylesheet" href="./mystyle.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+
+</head>
+<body>
+    <header>
+      <img class="logo" src="./imagenes/logo.png" alt="Logo natulert" />
+      <h1 class="titulo">Natulert</h1>
+    </header>
+    <section class="menu">
+      <!-- Menu -->
+      <div class="home">
+        <a href="#" class="tab">
+          <svg class="svgIcon" viewBox="0 0 104 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M100.5 40.75V96.5H66V68.5V65H62.5H43H39.5V68.5V96.5H3.5V40.75L52 4.375L100.5 40.75Z" stroke="white"
+              stroke-width="7"></path>
+          </svg>
+        </a>
+      </div>
+      <h1 class="titulo_seccion">Consultar alerta</h1>
+      <div class="card">
+        <p class="time-text">
+          <span class="time" id="time"></span>
+          <span class="time-sub-text" id="period"></span>
+        </p>
+        <p class="day-text" id="day"></p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" stroke-width="0"
+          fill="currentColor" stroke="currentColor" class="moon">
+          <path
+            d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z">
+          </path>
+          <path
+            d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z">
+          </path>
+        </svg>
+      </div>
+    </section>
+    <main class="informacion">
+      
+      <section class="mapaa">
+     
+        <div class="controls">
+          <div class="dropdown"> <!-- Contenedor para el menú desplegable -->
+              <button class="alertbot">Alertas   ▼</button>
+              
+          </div>
+      </div>
+        <!-- Mapa -->
+        <div class="apia">
+          <div id="maap"></div>
+        </div>
+      </section>
+      <script src="logica.js"></script>
+    </header>
+    
+</body>
+</html>
