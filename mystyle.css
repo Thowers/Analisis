@@ -297,7 +297,7 @@ a{
     position: fixed;
     bottom: 0;
 }
-<<<<<<< HEAD
+
 .crear-alerta input,
 .crear-alerta select,
 .crear-alerta textarea {
@@ -338,7 +338,7 @@ a{
 .container_btn button:hover {
   background-color: #45a049;
 }
-=======
+
 .consulta {
     font-size: 16px; 
     display: inline-block;
@@ -382,4 +382,4 @@ a{
     background-color: #15a7a7; /* Color de fondo al pasar el mouse */
     transform: scale(1.05); 
 }
->>>>>>> 42aa0192128f7b5e16df9edd9436cbf1dda8088c
+
