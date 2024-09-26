@@ -42,3 +42,5 @@ var marker = L.marker([4.7109886, -74.072092]).addTo(map)
 var marker2 = L.marker([4.676, -74.045]).addTo(map)
     .bindPopup('Zona contaminada en este punto')
     .openPopup();
+
+ 
