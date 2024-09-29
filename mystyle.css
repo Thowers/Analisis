@@ -137,14 +137,6 @@ header {
 .card:hover>.moon {
     font-size: 20px;
 }
-
-
-
-
-.informacion {
-    background-color: var(--fondo);
-}
-
 .mapa {
     display: flex;
     justify-content: center;
@@ -169,6 +161,11 @@ header {
     width: 100%;
     height: 100%;
     background-color: #e5e5e5;
+}
+
+/*----------------------------------DE AQUI PARA ABAJO------------------------------------------*/ 
+.informacion {
+    background-color: var(--fondo);
 }
 
 .btn_filtro {
