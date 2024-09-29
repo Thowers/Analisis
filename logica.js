@@ -12,10 +12,10 @@ function updateTime() {
     document.getElementById('time').textContent = `${hours}:${minutes}`;
     document.getElementById('period').textContent = period;
     // Obtener el día de la semana y la fecha
-    const days = ['Domingo', 'Lunes', 'Martes', 'Mieercoles', 'Jueves', 'Viernes', 'Sabado'];
+    const days = ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'];
     const dayOfWeek = days[now.getDay()];    
     const day = now.getDate();
-    const months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+    const months = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sept', 'Oct', 'Nov', 'Dic'];
     const month = months[now.getMonth()];
     // Actualizar la fecha completa
     document.getElementById('day').textContent = `${dayOfWeek}, ${month} ${day}`;
