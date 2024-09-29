@@ -25,6 +25,7 @@ header {
     align-items: center;
     justify-content: space-between;
 }
+
 .logo {
     width: 15rem;
     padding: 0.2rem 0rem 0.2rem 3rem;
@@ -49,6 +50,22 @@ header {
     justify-content: space-between; /* Distribuye el contenido entre los extremos */
     background-color: var(--tercer-color);
 }
+.footer{
+    background-color: var(--primer-color);
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+.footer2{
+    background-color: var(--primer-color);
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
 
 .home {
     display: flex;
@@ -56,7 +73,7 @@ header {
     justify-content: flex-start; /* Alinea el contenido de .home hacia la izquierda */
     gap: 10px; /* Ajusta el espacio entre el ícono y el texto */
 }
-  .tab {
+.tab {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -120,6 +137,9 @@ header {
 .card:hover>.moon {
     font-size: 20px;
 }
+
+
+
 
 .informacion {
     background-color: var(--fondo);
@@ -268,14 +288,7 @@ button.alerta:hover::before {
     width: 250%;
 }
 
-.footer{
-    background-color: var(--primer-color);
-    padding: 10px 0;
-    text-align: center;
-    width: 100%;
-    position: relative;
-    bottom: 0;
-}
+
 
 a{
     text-decoration: none;
@@ -288,14 +301,7 @@ a{
     background-color: transparent;
 }
 
-.footer2{
-    background-color: var(--primer-color);
-    padding: 10px 0;
-    text-align: center;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-}
+
 
 .crear-alerta input,
 .crear-alerta select,
@@ -343,15 +349,6 @@ a{
     display: inline-block;
     vertical-align: middle;
 }
-.mapaa {
-    display: flex;
-    justify-content: flex-end; 
-    align-items: center; 
-    height: 500px; 
-    padding: 3rem;
-    width: 100%; 
-    box-sizing: border-box;
-}
 .controls {
     position: absolute; 
     top: 23.5rem; 
@@ -370,7 +367,7 @@ a{
     padding: 2rem;
   }
   
-  .list_alert a {
+.list_alert a {
     text-decoration: none;
     color: inherit;
     font-family: inherit;
@@ -378,7 +375,7 @@ a{
     line-height: inherit;
   }
   
-  .list_alert .link {
+.list_alert .link {
     position: relative;
     display: flex;
     align-items: center;
@@ -390,7 +387,7 @@ a{
     transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
   }
   
-  .list_alert .link::after {
+.list_alert .link::after {
     content: "";
     position: absolute;
     top: 0;
@@ -404,18 +401,18 @@ a{
     transition: transform 0.48s cubic-bezier(0.23, 1, 0.32, 1);
   }
   
-  .list_alert .link svg {
+.list_alert .link svg {
     width: 14px;
     height: 14px;
     fill: #000000;
     transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
   }
   
-  .list_alert .item {
+.list_alert .item {
     position: relative;
   }
   
-  .list_alert .item .submenu {
+.list_alert .item .submenu {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -435,7 +432,7 @@ a{
     list-style: none;
   }
   
-  .list_alert .item:hover .submenu {
+.list_alert .item:hover .submenu {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
@@ -444,27 +441,27 @@ a{
     border-color: #0a3cff;
   }
   
-  .list_alert .item:hover .link {
+.list_alert .item:hover .link {
     color: #ffffff;
     border-radius: 16px 16px 0 0;
   }
   
-  .list_alert .item:hover .link::after {
+.list_alert .item:hover .link::after {
     transform: scaleX(1);
     transform-origin: right;
   }
   
-  .list_alert .item:hover .link svg {
+.list_alert .item:hover .link svg {
     fill: #ffffff;
     transform: rotate(-180deg);
   }
   
-  .submenu .submenu-item {
+.submenu .submenu-item {
     width: 100%;
     transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
   }
   
-  .submenu .submenu-link {
+.submenu .submenu-link {
     display: block;
     padding: 12px 24px;
     width: 100%;
@@ -473,11 +470,11 @@ a{
     transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
   }
   
-  .submenu .submenu-item:last-child .submenu-link {
+.submenu .submenu-item:last-child .submenu-link {
     border-bottom: none;
   }
   
-  .submenu .submenu-link::before {
+.submenu .submenu-link::before {
     content: "";
     position: absolute;
     top: 0;
@@ -491,12 +488,12 @@ a{
     transition: transform 0.48s cubic-bezier(0.23, 1, 0.32, 1);
   }
   
-  .submenu .submenu-link:hover:before {
+.submenu .submenu-link:hover:before {
     transform: scaleX(1);
     transform-origin: right;
   }
   
-  .submenu .submenu-link:hover {
+.submenu .submenu-link:hover {
     color: #ffffff;
   }
   
