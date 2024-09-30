@@ -55,7 +55,7 @@
     <section class="btn_filtro">
       <!-- Formulario para crear alerta -->
       <div class="container_contenido">
-        <form class="crear-alerta">
+        <form class="crear-alerta" id="crear_alertas">
           <div>
             <label for="fecha">Fecha:</label>
             <input id="fecha" type="date" />
@@ -65,8 +65,8 @@
             <input id="hora" type="time" />
           </div>
           <div>
-            <label for="nivel-alerta">Nivel de Alerta:</label>
-            <select id="nivel-alerta">
+            <label for="nivel">Nivel de Alerta:</label>
+            <select id="nivel">
               <option value="1">Bajo</option>
               <option value="2">Medio</option>
               <option value="3">Alto</option>
@@ -76,9 +76,10 @@
             <label for="descripcion">Descripción:</label>
             <textarea id="descripcion"></textarea>
           </div>
+          <input id="ubicacion" type="hidden">
         </form>
         <div class="container_btn">
-            <button class="alerta">Crear Alerta</button>
+            <button class="alerta" type="button" form="crear_alertas">Crear Alerta</button>
             <button class="alerta" onclick="location.href='index.html'">Cancelar</button>
         </div>
       </div>
