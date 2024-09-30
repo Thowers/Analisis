@@ -30,6 +30,34 @@ document.addEventListener('DOMContentLoaded', () => {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
+    // Variable para almacenar los marcadores
+    let markers = [];
+    let alertasData = []; // Variable para almacenar las alertas originales
+
+    function mostrarAlertasFiltradas(nivelesSeleccionados) {
+        // Remover todos los marcadores del mapa
+        markers.forEach(({ marker }) => map.removeLayer(marker));
+        
+        // Filtrar y mostrar las alertas según los niveles seleccionados
+        alertasData.forEach(alerta => {
+            if (nivelesSeleccionados.includes(alerta.nivel)) {
+                const [lat, lng] = alerta.ubicacion.split(',').map(Number);
+                if (!isNaN(lat) && !isNaN(lng)) {
+                    // Crear un marcador para cada alerta
+                    const marker = L.marker([lat, lng])
+                        .bindTooltip(`
+                            <strong>Fecha:</strong> ${alerta.fecha}<br>
+                            <strong>Hora:</strong> ${alerta.hora}<br>
+                            <strong>Nivel:</strong> ${alerta.nivel}<br>
+                            <strong>Descripción:</strong> ${alerta.descripcion}
+                        `, { permanent: false, sticky: true });
+                    markers.push({ marker, nivel: alerta.nivel });
+                    marker.addTo(map); // Añadir el marcador filtrado al mapa
+                }
+            }
+        });
+    }
+
     // Función para obtener alertas de la base de datos
     fetch('http://localhost:3000/alertas')
     .then(response => {
@@ -39,27 +67,76 @@ document.addEventListener('DOMContentLoaded', () => {
         return response.json();
     })
     .then(alertas => {
-        alertas.forEach(alerta => {
+        const alertSelect = document.getElementById('list_alert_selector'); // Selector de alertas
+        alertas.forEach((alerta, index) => {
             const [lat, lng] = alerta.ubicacion.split(',').map(Number);
             if (!isNaN(lat) && !isNaN(lng)) {
-                const marker = L.marker([lat, lng]).addTo(map)
+                // Crear un marcador para cada alerta
+                const marker = L.marker([lat, lng])
                     .bindTooltip(`
                         <strong>Fecha:</strong> ${alerta.fecha}<br>
                         <strong>Hora:</strong> ${alerta.hora}<br>
                         <strong>Nivel:</strong> ${alerta.nivel}<br>
                         <strong>Descripción:</strong> ${alerta.descripcion}
                     `, { permanent: false, sticky: true });
+
+                // Almacenar el marcador en el array de marcadores con el nivel
+                markers.push({ marker, nivel: alerta.nivel });
+
+                // Agregar la alerta al selector
+                const option = document.createElement('option');
+                option.value = index; // El índice del marcador en el array
+                option.textContent = `Alerta ${index + 1} - Nivel: ${alerta.nivel} - ${alerta.fecha}`;
+                alertSelect.appendChild(option);
             } else {
                 console.error(`Ubicación inválida: ${alerta.ubicacion}`);
+            }
+        });
+
+        // Evento cuando el usuario selecciona una alerta
+        alertSelect.addEventListener('change', function () {
+            // Remover todos los marcadores del mapa
+            markers.forEach(({ marker }) => map.removeLayer(marker));
+
+            // Mostrar solo el marcador seleccionado
+            const selectedIndex = this.value;
+            if (selectedIndex !== "") {
+                markers[selectedIndex].marker.addTo(map);
+                map.setView(markers[selectedIndex].marker.getLatLng(), 14); // Centrar en el marcador seleccionado
             }
         });
     })
     .catch(error => {
         console.error('Error al obtener las alertas:', error);
     });
+    // Obtener las alertas de la base de datos
+    fetch('http://localhost:3000/alertas')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Error HTTP: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(alertas => {
+            alertasData = alertas; // Guardar las alertas en la variable
+            // Filtrado por nivel usando checkboxes
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function () {
+                    const nivelesSeleccionados = Array.from(checkboxes)
+                        .filter(checkbox => checkbox.checked)
+                        .map(checkbox => checkbox.getAttribute('data-nivel'));
+                    
+                    mostrarAlertasFiltradas(nivelesSeleccionados);
+                });
+            });
+        })
+        .catch(error => {
+            console.error('Error al obtener las alertas:', error);
+        });
 
     // Manejar el evento de clic en el mapa para seleccionar una ubicación
-    let selectedLocation; // Asegúrate de que la variable esté declarada
+    let selectedLocation;
     map.on('click', function (e) {
         if (selectedLocation) {
             map.removeLayer(selectedLocation); // Elimina el marcador anterior
@@ -72,13 +149,20 @@ document.addEventListener('DOMContentLoaded', () => {
 // Lógica del formulario para enviar datos al backend
 document.querySelector('.alerta').addEventListener('click', function (event) {
     event.preventDefault(); // Prevenir la recarga de la página
+    // Obtener la ubicación seleccionada
+    const ubicacion = document.getElementById('ubicacion').value;
+    // Comprobar si se ha seleccionado una ubicación
+    if (!ubicacion) {
+        alert("Por favor, selecciona una ubicación en el mapa."); // Mostrar alerta si no hay ubicación
+        return; // Detener la ejecución si no se seleccionó ubicación
+    }
     // Recopilar los datos del formulario
     const data = {
         fecha: document.getElementById('fecha').value,
         hora: document.getElementById('hora').value,
         nivel: document.getElementById('nivel').value,
         descripcion: document.getElementById('descripcion').value,
-        ubicacion: document.getElementById('ubicacion').value,// Obtener la ubicación seleccionada
+        ubicacion: document.getElementById('ubicacion').value, // Obtener la ubicación seleccionada
     };
     // Enviar los datos al backend mediante fetch
     fetch('http://localhost:3000/crear-alerta', {
@@ -96,10 +180,10 @@ document.querySelector('.alerta').addEventListener('click', function (event) {
     })
     .then(result => {
         console.log('Alerta creada:', result);
+        window.location.href = "index.html";
     })
     .catch(error => {
         console.error('Error:', error);
     });
-    
 });
 
