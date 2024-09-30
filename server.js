@@ -42,4 +42,14 @@ app.listen(3000, () => {
     console.log('Servidor corriendo en el puerto 3000');
 });
 
-
+app.get('/alertas', (req, res) => {
+    const sql = 'SELECT * FROM alertas';
+    
+    db.query(sql, (err, results) => {
+        if (err) {
+            console.error(err);
+            return res.status(500).send('Error al obtener alertas');
+        }
+        res.json(results);
+    });
+});

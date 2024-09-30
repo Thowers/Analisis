@@ -18,9 +18,8 @@ function updateTime() {
 
     document.getElementById('day').textContent = `${dayOfWeek}, ${month} ${day}`;
 }
-
 updateTime();
-setInterval(updateTime, 60000);
+setInterval(updateTime, 1);
 
 // MAPA
 document.addEventListener('DOMContentLoaded', () => {
@@ -30,9 +29,37 @@ document.addEventListener('DOMContentLoaded', () => {
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
-    // Crear variable para almacenar la ubicación seleccionada
-    var selectedLocation = null;
+
+    // Función para obtener alertas de la base de datos
+    fetch('http://localhost:3000/alertas')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`Error HTTP: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(alertas => {
+        alertas.forEach(alerta => {
+            const [lat, lng] = alerta.ubicacion.split(',').map(Number);
+            if (!isNaN(lat) && !isNaN(lng)) {
+                const marker = L.marker([lat, lng]).addTo(map)
+                    .bindTooltip(`
+                        <strong>Fecha:</strong> ${alerta.fecha}<br>
+                        <strong>Hora:</strong> ${alerta.hora}<br>
+                        <strong>Nivel:</strong> ${alerta.nivel}<br>
+                        <strong>Descripción:</strong> ${alerta.descripcion}
+                    `, { permanent: false, sticky: true });
+            } else {
+                console.error(`Ubicación inválida: ${alerta.ubicacion}`);
+            }
+        });
+    })
+    .catch(error => {
+        console.error('Error al obtener las alertas:', error);
+    });
+
     // Manejar el evento de clic en el mapa para seleccionar una ubicación
+    let selectedLocation; // Asegúrate de que la variable esté declarada
     map.on('click', function (e) {
         if (selectedLocation) {
             map.removeLayer(selectedLocation); // Elimina el marcador anterior
