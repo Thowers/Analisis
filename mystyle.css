@@ -25,6 +25,7 @@ header {
     align-items: center;
     justify-content: space-between;
 }
+
 .logo {
     width: 15rem;
     padding: 0.2rem 0rem 0.2rem 3rem;
@@ -49,6 +50,22 @@ header {
     justify-content: space-between; /* Distribuye el contenido entre los extremos */
     background-color: var(--tercer-color);
 }
+.footer{
+    background-color: var(--primer-color);
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+.footer2{
+    background-color: var(--primer-color);
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
 
 .home {
     display: flex;
@@ -56,7 +73,7 @@ header {
     justify-content: flex-start; /* Alinea el contenido de .home hacia la izquierda */
     gap: 10px; /* Ajusta el espacio entre el ícono y el texto */
 }
-  .tab {
+.tab {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -120,12 +137,6 @@ header {
 .card:hover>.moon {
     font-size: 20px;
 }
-
-.informacion {
-    background-color: var(--fondo);
-}
-
-
 .mapa {
     display: flex;
     justify-content: center;
@@ -137,7 +148,7 @@ header {
 }
 .api {
     width: 80%;
-    height: 100%;
+    height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -150,6 +161,11 @@ header {
     width: 100%;
     height: 100%;
     background-color: #e5e5e5;
+}
+
+/----------------------------------DE AQUI PARA ABAJO------------------------------------------/ 
+.informacion {
+    background-color: var(--fondo);
 }
 
 .btn_filtro {
@@ -248,6 +264,7 @@ header {
     position: relative;
     overflow: hidden;
     background-color: var(-primer-color);
+    left: 14px;
 }
 button.alerta:hover {
     color: #ffffff;
@@ -269,18 +286,11 @@ button.alerta:hover::before {
     width: 250%;
 }
 
-.footer{
-    background-color: var(--primer-color);
-    padding: 10px 0;
-    text-align: center;
-    width: 100%;
-    position: relative;
-    bottom: 0;
-}
+
 
 a{
     text-decoration: none;
-    background: linear-gradient(90deg, #bc6c25, var(--cuarto-color));
+    background: var(--primer-color);
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -289,14 +299,7 @@ a{
     background-color: transparent;
 }
 
-.footer2{
-    background-color: var(--primer-color);
-    padding: 10px 0;
-    text-align: center;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-}
+
 
 .crear-alerta input,
 .crear-alerta select,
@@ -344,30 +347,6 @@ a{
     display: inline-block;
     vertical-align: middle;
 }
-.mapaa {
-    display: flex;
-    justify-content: flex-end; 
-    align-items: center; 
-    height: 500px; 
-    padding: 3rem;
-    width: 100%; 
-    box-sizing: border-box;
-}
-.apia {
-    width: 70%; 
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f0f0f0;
-    font-size: 24px;
-    color: #ff0000; 
-}
-#maap {
-    width: 100%; 
-    height: 100%; 
-    border: 1px solid; 
-}
 .controls {
     position: absolute; 
     top: 23.5rem; 
@@ -383,9 +362,10 @@ a{
     width: fit-content;
     display: flex;
     list-style: none;
+    padding: 2rem;
   }
   
-  .list_alert a {
+.list_alert a {
     text-decoration: none;
     color: inherit;
     font-family: inherit;
@@ -393,7 +373,7 @@ a{
     line-height: inherit;
   }
   
-  .list_alert .link {
+.list_alert .link {
     position: relative;
     display: flex;
     align-items: center;
@@ -403,34 +383,26 @@ a{
     border-radius: 16px;
     overflow: hidden;
     transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+    z-index: 1;
   }
   
-  .list_alert .link::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #0a3cff;
-    z-index: -1;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.48s cubic-bezier(0.23, 1, 0.32, 1);
-  }
+
+.list_alert .link:hover::after {
+    transform: scaleX(1); 
+}
   
-  .list_alert .link svg {
+.list_alert .link svg {
     width: 14px;
     height: 14px;
     fill: #000000;
     transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
   }
   
-  .list_alert .item {
+.list_alert .item {
     position: relative;
   }
   
-  .list_alert .item .submenu {
+.list_alert .item .submenu {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -450,36 +422,35 @@ a{
     list-style: none;
   }
   
-  .list_alert .item:hover .submenu {
+.list_alert .item:hover .submenu {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
     pointer-events: auto;
     border-top: transparent;
-    border-color: #0a3cff;
+    border-color: #fc0176;
   }
   
-  .list_alert .item:hover .link {
-    color: #ffffff;
+.list_alert .item:hover .link {
     border-radius: 16px 16px 0 0;
   }
   
-  .list_alert .item:hover .link::after {
+.list_alert .item:hover .link::after {
     transform: scaleX(1);
     transform-origin: right;
   }
   
-  .list_alert .item:hover .link svg {
-    fill: #ffffff;
+.list_alert .item:hover .link svg {
+    fill: var(--primer-color);
     transform: rotate(-180deg);
   }
   
-  .submenu .submenu-item {
+.submenu .submenu-item {
     width: 100%;
     transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
   }
   
-  .submenu .submenu-link {
+.submenu .submenu-link {
     display: block;
     padding: 12px 24px;
     width: 100%;
@@ -488,11 +459,11 @@ a{
     transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
   }
   
-  .submenu .submenu-item:last-child .submenu-link {
+.submenu .submenu-item:last-child .submenu-link {
     border-bottom: none;
   }
   
-  .submenu .submenu-link::before {
+.submenu .submenu-link::before {
     content: "";
     position: absolute;
     top: 0;
@@ -500,18 +471,17 @@ a{
     transform: scaleX(0);
     width: 100%;
     height: 100%;
-    background-color: #0a3cff;
+    background-color: var(--cuarto-color);
     z-index: -1;
     transform-origin: left;
     transition: transform 0.48s cubic-bezier(0.23, 1, 0.32, 1);
   }
   
-  .submenu .submenu-link:hover:before {
+.submenu .submenu-link:hover:before {
     transform: scaleX(1);
     transform-origin: right;
   }
   
-  .submenu .submenu-link:hover {
+.submenu .submenu-link:hover {
     color: #ffffff;
   }
-  
