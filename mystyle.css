@@ -163,11 +163,8 @@ header {
     background-color: #e5e5e5;
 }
 
-<<<<<<< HEAD
-/----------------------------------DE AQUI PARA ABAJO------------------------------------------/ 
-=======
 /*----------------------------------DE AQUI PARA ABAJO------------------------------------------*/ 
->>>>>>> 7131418c74e9caf646181af75f13af3893dd7180
+
 .informacion {
     background-color: var(--fondo);
 }
@@ -346,7 +343,7 @@ a{
   background-color: #45a049;
 }
 
-/*estos son mis estilos*/
+/*---------------------------------------INDEX CONSULTA----------------------------------------------*/
 .consulta {
     font-size: 16px; 
     display: inline-block;
