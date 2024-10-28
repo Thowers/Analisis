@@ -187,3 +187,14 @@ document.querySelector('.alerta').addEventListener('click', function (event) {
     });
 });
 
+function mostrarGuia() {
+    console.log("guias");
+    document.getElementById('seccion-guias').style.display = 'flex';
+    document.getElementById('seccion-videos').style.display = 'none';
+}
+
+function mostrarVideo() {
+    console.log("videos");
+    document.getElementById('seccion-guias').style.display = 'none';
+    document.getElementById('seccion-videos').style.display = 'flex';
+}
