@@ -672,3 +672,62 @@ a{
     align-items: center;
 }
 
+/*------------------------seccion del login---------------------------*/
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #9bf0c1;
+  }
+  
+  .login-form {
+    background-color: rgb(133, 221, 192);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    width: 300px;
+  }
+  
+  .form-group {
+    margin-bottom: 18px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .form-group input {
+    width: 94%;
+    padding: 7px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .login-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #5cb85c;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .titulo_login {
+    font-weight: var(--peso-fuente);
+    flex-grow: 1;
+    text-align: center;
+    font-size: 5rem;    
+    background: linear-gradient(90deg, #dfd5cc, var(--cuarto-color));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.logo_login {
+    width: 10rem;
+    padding: 0.2rem 0rem 0.2rem 3rem;
+    height: auto;
+    margin: 0;
+}
