@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+  <link rel="stylesheet" href="./mystyle.css" />
+  <link rel="icon" href="./imagenes/logo.png" type="image/x-icon" />  
+  <title>Natulert - Inicio</title>
+</head>
+
+<body>
+  <header>
+    <!-- Logo y Nombre -->
+    <img class="logo_login" src="./imagenes/logo.png" alt="Logo natulert" />
+    <h3 class="titulo_login">Natulert</h3>
+  </header>
+  <section class="menu">
+    <!-- Menu -->
+  
+      </a>
+    </div>
+    
+ 
+      
+   
+    </div>
+  </section>
+  <section class="login-container">
+  
+ 
+    <form class="login-form" onsubmit="return loginUser(event)" action="conexion/validar.php" method="post">
+        
+       
+    <h2>Iniciar Sesión</h2>
+        
+        
+    <div class="form-group">
+          <label for="username">Usuario</label>       
+    <input type="text" id="username" required />
+  </div>
+   
+        <div class="form-group">
+    <label for="password">Contraseña</label>     
+    <input type="password" id="password" required />
+        </div>
+
+        <button type="submit" class="login-btn">Iniciar Sesión</button>
+    </form>
+    
+</section>
+
+    <!-- informacion varia -->
+    <a href="https://github.com/Thowers/Analisis">
+      <img class="github" src="https://github.com/Thowers/Guia2TP/blob/main/IMAGENES/github.png?raw=true"
+        alt="logo de github" />GitHub
+    </a>
+  </footer>
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+  <script src="./logica.js"></script>
+</body>
+
+</html>
