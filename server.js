@@ -37,10 +37,6 @@ app.post('/crear-alerta', (req, res) => {
     });
 });
 
-// Escuchar en el puerto 3000
-app.listen(3000, () => {
-    console.log('Servidor corriendo en el puerto 3000');
-});
 
 app.get('/alertas', (req, res) => {
     const sql = 'SELECT * FROM alertas';
@@ -53,3 +49,33 @@ app.get('/alertas', (req, res) => {
         res.json(results);
     });
 });
+
+// Ruta para obtener una guía por ID
+app.get("/api/guias/:id", (req, res) => {
+    const id = req.params.id;
+    db.query("SELECT * FROM guias WHERE id = ?", [id], (error, results) => {
+      if (error) return res.status(500).send("Error de base de datos");
+      res.json(results[0]); // Envía el primer resultado
+    });
+  });
+  
+// Ruta para obtener la guía por ID
+app.get('/guia/:id', (req, res) => {
+    const guiaId = req.params.id;
+    const query = 'SELECT titulo_guia, contenido FROM guias WHERE id_guia = ?';
+  
+    db.query(query, [guiaId], (error, results) => {
+      if (error) {
+        return res.status(500).json({ error: 'Error en la base de datos' });
+      }
+      if (results.length > 0) {
+        res.json(results[0]);
+      } else {
+        res.status(404).json({ error: 'Guía no encontrada' });
+      }
+    });
+  });
+  
+  app.listen(3000, () => {
+    console.log('Servidor corriendo en el puerto 3000');
+  });

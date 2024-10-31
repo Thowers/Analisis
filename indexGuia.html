@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
   <link rel="stylesheet" href="./mystyle.css" />
-  <link rel="icon" href="./imagenes/logo.png" type="image/x-icon" />  
+  <link rel="icon" href="./imagenes/logo.png" type="image/x-icon" />
   <title>Natulert - Guias</title>
 </head>
 
@@ -17,33 +17,32 @@
     <h1 class="titulo">Natulert</h1>
   </header>
   <section class="menu">
-      <!-- Menu -->
-  <div class="home">
-    <div class="item">
-      <a href="#" class="link">
-        <span> OPCIONES </span>
-        <svg viewBox="0 0 360 360" xml:space="preserve">
-          <g id="SVGRepo_iconCarrier">
-            <path
-              id="XMLID_225_"
-              d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
-            ></path>
-          </g>
-        </svg>
-      </a>
-      <div class="submenu">
-        <div class="submenu-item">
-          <a href="./indexMapa.html" class="submenu-link"> MAPA </a>
-        </div>
-        <div class="submenu-item">
-          <a href="./indexGuia.html" class="submenu-link"> GUIAS </a>
-        </div>
-        <div class="submenu-item">
-          <a href="#" class="submenu-link"> FORO </a>
+    <!-- Menu -->
+    <div class="home">
+      <div class="item">
+        <a href="#" class="link">
+          <span> OPCIONES </span>
+          <svg viewBox="0 0 360 360" xml:space="preserve">
+            <g id="SVGRepo_iconCarrier">
+              <path id="XMLID_225_"
+                d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z">
+              </path>
+            </g>
+          </svg>
+        </a>
+        <div class="submenu">
+          <div class="submenu-item">
+            <a href="./indexMapa.html" class="submenu-link"> MAPA </a>
+          </div>
+          <div class="submenu-item">
+            <a href="./indexGuia.html" class="submenu-link"> GUIAS </a>
+          </div>
+          <div class="submenu-item">
+            <a href="#" class="submenu-link"> FORO </a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
     <h1 class="titulo_seccion">GUIAS</h1>
     <div class="card">
       <p class="time-text">
@@ -62,86 +61,111 @@
       </svg>
     </div>
   </section>
-  
+
   <main class="informacion">
     <section class="guias-seccion">
-        <div class="botones-superior">
-            <button class="alerta" onclick="mostrarGuia()">Guías</button>
-            <button class="alerta" onclick="mostrarVideo()">Videos</button>
-        </div>
-    <!-- GUIAS -->
-        <div class="contenedor-guias" id="seccion-guias" >
-            <div class="columna-izquierda">
-                <div class="guia-principal">
-                    <h2>Porque cuidar el medio ambiente</h2>
-                        <a href="./index.html">
-                            <img src="./imagenes/IMAGENES DE GUIAS/guia1.png" alt="Guía Principal" class="imagen-principal">
-                        </a>
-                    </div>
-            </div>
-            <div class="columna-derecha">
-                <div class="guia-secundaria">
-                    <p>Guia para recilar</p>
-                    <a href="./index.html"><img src="./imagenes/IMAGENES DE GUIAS/reciclar.png" alt="Guía Secundaria 1" class="imagen-secundaria"></a>
-                    
-                </div>
-                <div class="guia-secundaria">
-                    <p>Guia para ahorrar agua</p>
-                    <a href="./index.html"><img src="./imagenes/IMAGENES DE GUIAS/agua.png" alt="Guía Secundaria 2" class="imagen-secundaria"></a>                    
-                </div>
-                <div class="guia-secundaria">
-                    <p>Guia para ahorrar energia</p>
-                    <a href="./index.html"><img src="./imagenes/IMAGENES DE GUIAS/energia.png" alt="Guía Secundaria 3" class="imagen-secundaria"></a>                    
-                </div>
-                <div class="guia-secundaria">
-                    <p>Guía para consumo responsable y sostenible</p>
-                    <a href="./index.html"><img src="./imagenes/IMAGENES DE GUIAS/consumo.png" alt="Guía Secundaria 4" class="imagen-secundaria"></a>                    
-                </div>
-            </div>
-        </div>
-    <!-- VIDEOS -->
-    <div class="contenedor-videos" id="seccion-videos" style="display: none;">
+      <div class="botones-superior">
+        <button class="alerta" onclick="mostrarGuia()">Guías</button>
+        <button class="alerta" onclick="mostrarVideo()">Videos</button>
+      </div>      
+      <!-- GUIAS -->
+      <div class="contenedor-guias" id="seccion-guias">
         <div class="columna-izquierda">
-            <div class="video-principal">
-                <h2>Que es el medio ambiente y como cuidarlo</h2>
-                <iframe width="100%" height="400" 
-                src="https://www.youtube.com/embed/0V8Yv5ckzT8?si=DP-CDH0F1S8WHuh5" 
-                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                 allowfullscreen></iframe>
-            </div>
+          <div class="guia-principal">
+            <h2>Porque cuidar el medio ambiente</h2>
+            <a href="#" class="guia-link">
+              <img src="./imagenes/IMAGENES DE GUIAS/guia1.png" alt="Guía Principal"
+                class="imagen-guia imagen-principal" data-id="1"/>
+            </a>
+          </div>
         </div>
         <div class="columna-derecha">
-            <div class="video-secundario">
-                <p>Para cuidar el ambiente, la conciencia no alcanza | Sergio Federovisky | TEDxCordoba</p>
-                <iframe width="100%" height="200" 
-                src="https://www.youtube.com/embed/CLq6tykbIrk?si=haFI26wN_D7o4YCy" 
-                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                allowfullscreen></iframe>                
-            </div>
-            <div class="video-secundario">
-                <p>¿Cómo reciclar en Bogotá?</p>
-                <iframe width="100%" height="200" 
-                src="https://www.youtube.com/embed/73CIPxBv_Sc?si=6PdFq1YQernCap5z" 
-                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                allowfullscreen></iframe>                
-            </div>
-            <div class="video-secundario">
-                <p>El CUIDADO DEL AGUA, por qué es importante y consejos para ahorrar</p>
-                <iframe width="100%" height="200" 
-                src="https://www.youtube.com/embed/r3cH7KYhgq8?si=b8FNAMUh9iD94T_e"
-                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                allowfullscreen></iframe>               
-            </div>
-            <div class="video-secundario">
-                <p>¿Cómo superar la Crisis Mundial del Agua?</p>
-                <iframe width="100%" height="200" 
-                src="https://www.youtube.com/embed/Wka0KQmCL3w?si=UEynNYY-KCsaWpu_" 
-                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                allowfullscreen></iframe>                
-            </div>
+          <div class="guia-secundaria">
+            <p>Guía para reciclar</p>
+            <a href="#" class="guia-link">
+              <img src="./imagenes/IMAGENES DE GUIAS/reciclar.png" alt="Guía Secundaria 1"
+                class="imagen-guia imagen-secundaria" data-id="2"/>
+            </a>
+          </div>
+          <div class="guia-secundaria">
+            <p>Guía para ahorrar agua</p>
+            <a href="#" class="guia-link">
+              <img src="./imagenes/IMAGENES DE GUIAS/agua.png" alt="Guía Secundaria 2"
+                class="imagen-guia imagen-secundaria" data-id="3"/>
+            </a>
+          </div>
+          <div class="guia-secundaria">
+            <p>Guía para ahorrar energía</p>
+            <a href="#" class="guia-link">
+              <img src="./imagenes/IMAGENES DE GUIAS/energia.png" alt="Guía Secundaria 3"
+                class="imagen-guia imagen-secundaria" data-id="4"/>
+            </a>
+          </div>
+          <div class="guia-secundaria">
+            <p>Guía para consumo responsable y sostenible</p>
+            <a href="#" class="guia-link">
+              <img src="./imagenes/IMAGENES DE GUIAS/consumo.png" alt="Guía Secundaria 4"
+                class="imagen-guia imagen-secundaria" data-id="5"/>
+            </a>
+          </div>
         </div>
-    </div>
-
+      </div>
+      <!-- Contenedor del Popup -->
+      <div id="popup" class="popup" style="display:none;">
+        <div class="popup-content">
+            <span class="close-button">&times;</span>
+            <h2 id="popup-title"></h2>
+            <p id="popup-text"></p>
+        </div>
+      </div>
+      <!-- VIDEOS -->
+      <div class="contenedor-videos" id="seccion-videos" style="display: none">
+        <div class="columna-izquierda">
+          <div class="video-principal">
+            <h2>Que es el medio ambiente y como cuidarlo</h2>
+            <iframe width="100%" height="400" src="https://www.youtube.com/embed/0V8Yv5ckzT8?si=DP-CDH0F1S8WHuh5"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="columna-derecha">
+          <div class="video-secundario">
+            <p>
+              Para cuidar el ambiente, la conciencia no alcanza | Sergio
+              Federovisky | TEDxCordoba
+            </p>
+            <iframe width="100%" height="200" src="https://www.youtube.com/embed/CLq6tykbIrk?si=haFI26wN_D7o4YCy"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+          <div class="video-secundario">
+            <p>¿Cómo reciclar en Bogotá?</p>
+            <iframe width="100%" height="200" src="https://www.youtube.com/embed/73CIPxBv_Sc?si=6PdFq1YQernCap5z"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+          <div class="video-secundario">
+            <p>
+              El CUIDADO DEL AGUA, por qué es importante y consejos para
+              ahorrar
+            </p>
+            <iframe width="100%" height="200" src="https://www.youtube.com/embed/r3cH7KYhgq8?si=b8FNAMUh9iD94T_e"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+          <div class="video-secundario">
+            <p>¿Cómo superar la Crisis Mundial del Agua?</p>
+            <iframe width="100%" height="200" src="https://www.youtube.com/embed/Wka0KQmCL3w?si=UEynNYY-KCsaWpu_"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 
@@ -154,6 +178,7 @@
   </footer>
   <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
   <script src="./logica.js"></script>
+  
 </body>
 
 </html>
