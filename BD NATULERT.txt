@@ -1,0 +1,185 @@
+create database natulert;
+use natulert
+create table alertas(
+id int auto_increment primary key,
+fecha date not null,
+hora time not null,
+nivel varchar(50) not null,
+descripcion text not null,
+ubicacion varchar(255) not null,
+estado varchar(50) null
+)Engine=InnoDB;
+
+CREATE TABLE guias (
+id_guia INT AUTO_INCREMENT PRIMARY KEY,
+titulo_guia VARCHAR(255) not null,
+contenido TEXT not null
+)Engine=InnoDB;
+
+INSERT INTO guias(titulo_guia, contenido) VALUES ('Que es el medio ambiente y porqué es clave para la vida?','El medioambiente es el espacio en el que se desarrolla la vida de los distintos organismos favoreciendo su interacción. En él se encuentran tanto seres vivos como elementos sin vida y otros creados por la mano del hombre.
+Dentro de los primeros, agrupados bajo la denominación de factores bióticos, forman parte —además del ser humano y del resto de animales— toda la flora del planeta junto a los hongos y a pequeños organismos que cumplen funciones esenciales para el sostenimiento de la vida, y cuyo principal representante son las bacterias.
+
+Por otro lado, existen los elementos sin vida, conocidos como factores abióticos. Estos son esenciales para la subsistencia de los organismos vivos y conforman el espacio físico del ambiente, siendo los componentes básicos del ecosistema. Ejemplo de ellos son el agua, el aire y el suelo. En cuanto a los artificiales, destacan las tradiciones, la urbanización o la cultura. Estos se caracterizan por haber sido creados por el ser humano. La suma de todos conforma el medioambiente.
+
+La ciencia que estudia el medioambiente
+
+Todo lo relacionado con el medioambiente es estudiado por la ecología, una rama de la biología especializada en los seres vivos y en su interacción con el medio. Los especialistas de esta disciplina tienen en la forestación una cuestión fundamental. Hay que tener en cuenta que los árboles cumplen funciones vitales para gran parte de la fauna existente y para los seres humanos. Tanto es así que son los principales productores de oxígeno de los ecosistemas terrestres.
+
+Cada 5 de junio, el mundo conmemora el Día del Medioambiente. El objetivo es concienciar a la sociedad sobre la importancia de garantizar una protección duradera del planeta y sus recursos naturales. Las cifras hablan por sí solas: 1.200 toneladas de CO2 se vierten a la atmósfera cada segundo, 8.000 personas mueren al día en algún punto del planeta por causas relacionadas con la contaminación del aire, alrededor de 140.000 elefantes africanos desaparecieron en la última década como consecuencia de la falta de acceso a la alimentación o al agua. De ahí la importancia de contribuir a garantizar una sostenibilidad real a largo plazo de los ecosistemas.');
+
+INSERT INTO guias(titulo_guia, contenido) VALUES ('Tips para reciclar: Guía paso a paso para contribuir al medioambiente','Paso 1: Limpiar el material a reciclar
+El primer paso para un reciclaje eficiente es limpiar adecuadamente los materiales que deseas reciclar. 
+
+Ya sea una botella de plástico, un envase de vidrio o una lata de aluminio, asegúrate de eliminar cualquier residuo que pueda quedar en su interior. 
+
+Simplemente, enjuaga el envase con un poco de agua. Esto no solo evita malos olores, sino que también facilita el proceso de reciclaje, ya que los materiales limpios son más fáciles de procesar.
+
+Aprende a reciclar al ritmo de Grupo Red.
+
+Tip de reciclaje para limpiar el material
+En lugar de utilizar agua potable, considera usar agua que ya has utilizado para otros fines, como el agua utilizada para lavar platos o cocinar. Esto ayuda a conservar recursos.
+
+Paso 2: Secar
+Una vez que hayas lavado los envases, déjalos secar por completo antes de colocarlos en el contenedor de reciclaje. 
+
+La humedad puede interferir en el proceso de reciclaje y provocar problemas en la calidad de los materiales reciclados. 
+
+Al dejar que los envases se sequen completamente, estarás asegurando que sean aptos para su posterior procesamiento.
+
+Tip de reciclaje para secar los desechos
+Si tienes espacio al aire libre, coloca los residuos recién lavados, como botellas de vidrio, latas o plásticos limpios, en un área soleada y ventilada para que se sequen de forma natural.
+
+Si vives en un área con clima húmedo o durante la temporada de lluvias, es posible que necesites recurrir a otros métodos, como usar un paño limpio y seco para secar los residuos antes de colocarlos en el contenedor de reciclaje.
+
+Paso 3: Aplastar los envases que se van a reciclar
+Si tienes espacio limitado en tu contenedor de reciclaje o simplemente deseas optimizar el espacio, considera aplastar los envases antes de depositarlos en el contenedor. 
+
+Aplastar las botellas de plástico, latas o cajas de cartón permite aprovechar al máximo el espacio disponible, lo que significa menos viajes al centro de reciclaje y una reducción de las emisiones de carbono asociadas al transporte.
+
+Tip para aplastar los desechos a reciclar
+Ten cuidado de no aplicar demasiada presión para evitar dañar el material del envase o cortarte con bordes afilados.
+
+Paso 4: Entregar los residuos para su reciclaje
+Una vez que hayas limpiado, secado y aplastado tus materiales reciclables, llega el momento de entregarlos adecuadamente. 
+
+En algunas localidades de Chile existe el camión del reciclaje que ofrece un servicio de recolección de materiales a domicilio, el que pasará por la mayoría de los departamentos y casas del país en un plazo máximo de 12 años.
+
+Si tienes acceso a este servicio, simplemente coloca tus materiales limpios y secos en un lugar designado y espera a que el camión del reciclaje pase a recogerlos. 
+
+Tip para entregar materiales al camión del reciclaje
+Coloca los contenedores de reciclaje en el lugar y día designado para la recolección.
+
+Recuerda que el reciclaje es una práctica que beneficia a todos, ya que reduce la contaminación, conserva recursos naturales y contribuye a la lucha contra el cambio climático. 
+
+¡No subestimes el poder de tus acciones! 
+
+Al adoptar estos tips de reciclaje en tu rutina diaria, estás contribuyendo al bienestar de nuestro planeta y de las generaciones futuras. 
+
+¡Reciclar es un pequeño gesto que genera un gran impacto!');
+
+INSERT INTO guias(titulo_guia, contenido) VALUES ('11 medidas para ahorrar agua','1. Sé consciente
+
+Siempre que abras un grifo o vayas a usar el agua para cualquier cosa, bañarse en una piscina, en un río o lago limpio, en el mar… trata de pensar que tú eres uno de los afortunados en el mundo que dispones de acceso al agua y que debes hacer un uso sostenible de la misma y únicamente utilizar la necesaria.
+2. Dúchate en vez de bañarte
+
+El baño gasta 15 veces más de agua que la ducha.
+3. Cierra el grifo mientras te lavas los dientes
+
+Te lavas los dientes, te afeitas o te enjabonas las manos… y si lavas los platos a mano, usa barreños y no lo hagas con el grifo abierto. Por ejemplo, si nos lavamos los dientes con el grifo abierto gastamos alrededor de seis litros, mientras que al abrirlo solo cuando lo necesitamos gastaremos menos de medio litro.
+4. El inodoro NO es una papelera
+
+Cada vez que usamos la cisterna del inodoro gastamos entre nueve y 10 litros de agua…a veces, para arrastrar solo una colilla o un papelito. Pon una papelera en el baño y úsala.
+5. Evita perder agua del grifo
+
+Arregla las fugas de agua. Los grifos que gotean pueden llegar a gastar en un año 11.000 litros de agua. Las fugas en la cisterna del inodoro pueden suponer más de 100 litros de agua al día.
+6. No enjuagues los platos antes de meterlos en el lavavajillas
+
+Si tienes esta costumbre ya no lo hagas, actualmente todos los electrodomésticos pueden limpiar bien la vajilla sin necesidad de este prelavado manual.
+7. Llena hasta arriba la lavadora y el lavavajillas
+
+Utilicemos la lavadora y el lavavajillas siempre llenos y si puedes dejar de usar la secadora, mejor: ahorrarás agua y electricidad. El consumo de agua en la colada suele ser el 20% de nuestro consumo total en el hogar. Por cierto, siempre que puedas, no utilices el programa de prelavado.
+8. Agua que no has de beber, no la dejes correr
+
+Llena una botella de agua y métela en la nevera, tendrás siempre agua fresca. No la dejes correr para conseguir agua fresquita.
+9. Usa reductores de caudal o aireadores en los grifos.
+
+Los reductores son dispositivos que se pueden incorporar a los grifos o la ducha e impiden que el caudal supere el límite fijado. Lo aconsejable para grifos son ocho litros por minuto y para ducha 10 litros/minuto. Los aireadores son dispositivos que permiten introducir aire en el chorro de agua, consiguiendo un ahorro del 40 o el 50%.
+10. Si vas a cambiar los electrodomésticos...
+
+Trata de comprar aquellos que sean más eficientes energéticamente. Son inicialmente más caros, pero consumen menos energía y menos agua, con lo cual los costes se igualan a la larga. La eficiencia de los electrodomésticos está regulada por la Unión Europea en una calificación de la A a la G, siendo la A la más eficiente y la G la que señala a aquellos con peores prestaciones energéticas.
+11. Si tienes jardín o plantas de exterior que regar...
+
+Hazlo por la noche. Al regar durante el día puedes perder hasta el 30% por la evaporación.
+
+Estas son algunas medidas que nos ayudarán sobre todo a cambiar hábitos y actitudes frente al uso que hacemos a diario del agua y que nos permitirán ahorrar en este recurso imprescindible. No solo nos estaremos acostumbrando a usar más eficiente y sosteniblemente  un recurso como el agua, sino que además, ahorraremos dinero.');
+
+INSERT INTO guias(titulo_guia, contenido) VALUES ('Nueve consejos para ahorrar energía en casa','1. Limpia lámparas y bombillos 
+Una lámpara en mal estado puede llegar a perder hasta un 50 % de luminosidad. Al limpiar las lámparas, puedes usar focos de menor potencia y ahorrar hasta 20 % en el consumo de electricidad. Procura aprovechar al máximo la luz natural.  
+
+¡Mantén los bombillos apagados en el día! 
+2. Pásate a LED 
+Este tipo de bombillos consume entre seis y siete veces menos que uno tradicional y duran más tiempo. El ahorro total de energía en una casa con este tipo de iluminación puede ser del 80 %. 
+3. Toma duchas cortas 
+El agua caliente demanda la mayor cantidad de energía en el hogar, después de la calefacción y el aire acondicionado. 
+4. Desconecta los aparatos que no utilices 
+Así estén apagados, los electrodomésticos conectados a la corriente eléctrica pueden usar hasta un 10 % del consumo normal en funcionamiento. 
+5. Apaga el aire acondicionado si no estás en casa 
+En ciudades con temperaturas altas, existe una alta demanda de electricidad para enfriar los espacios. Es recomendable usarlos en casos estrictamente necesarios, de lo contrario se puede optar por abrir puertas y ventanas para que el aire circule libremente. Según la Agencia Internacional de Energía, en 2050 se triplicará la demanda mundial de energía para este uso. 
+6. Usa la lavadora llena 
+Así reducirás la cantidad de veces que la utilices por semana y también reducirás el desperdicio de agua. 
+7. Cuando cocines, alista de una sola vez todos los alimentos de la nevera 
+Cada vez que se abre la puerta, sale aire frío y entra aire caliente. Para compensar el aumento de temperatura en su interior, la nevera debe utilizar energía para volver a bajar la temperatura. Evita abrir la puerta innecesariamente y durante largo tiempo. 
+ 
+8. Si buscas electrodomésticos, elige los que tienen etiquetas que garantizan el ahorro de energía. 
+El consumo de los electrodomésticos se mide por su etiqueta. Las etiquetas de clase A (color verde) garantizan que las máquinas funcionan con el menor gasto de energía posible. ¡Procura comprar estrictamente lo necesario! 
+9. Ubica la nevera lejos del horno o microondas 
+Para que el compresor de la nevera no tenga que trabajar todo el tiempo, no la dejes cerca de ninguna fuente de calor como hornos o, incluso, de la luz solar directa.');
+
+INSERT INTO guias(titulo_guia, contenido) VALUES ('Cómo fomentar un consumo responsable y sostenible','El consumo responsable es una actitud que implica la toma de decisiones bien pensadas sobre los productos que se compran o los servicios que se contratan considerando las consecuencias ambientales, sociales y económicas.
+
+La idea de un consumo responsable, consciente y crítico, empleando eficientemente los recursos de los que se dispone, tiene que ver con un modelo de consumo respetuoso con el medioambiente que satisfaga las necesidades básicas de una comunidad o población y reduzca los excesos y el daño ambiental.
+
+Como ejemplos se podría mencionar una dieta balanceada con comida saludable, comprar alimentos que no hagan daño a las personas o el medioambiente, considerar adquirir frutas y verduras de agricultores locales, hacer un uso eficiente de los recursos naturales y energéticos, o considerar opciones de movilidad que no contaminen, entre otros.
+
+Según Naciones Unidas, mientras un tercio de la humanidad se enfrenta a la inseguridad alimentaria, una quinta parte de los alimentos se tira a la basura (el equivalente a mil millones de comidas).
+
+Será ineludible acordar un cambio de hábitos o del modelo alimentario para sentar las bases de una alimentación sostenible que evite la explotación desmedida  y el agotamiento de los recursos esenciales.
+
+Justamente, el consumo responsable y la producción es uno de los 17 Objetivos de Desarrollo Sostenible de las Naciones Unidas y mediante este ODS se busca reducir la huella ecológica a través de un cambio en la producción y consumo de recursos y así conseguir un crecimiento económico y desarrollo sostenible.
+
+Se insta a los países en desarrollo a avanzar hacia patrones sostenibles de consumo para 2030 puesto que si la población mundial llega a los 9.600 millones para 2050, harían falta casi tres planetas para proporcionar los recursos naturales necesarios para mantener los modos de vida actuales.
+
+Las acciones que las personas realicen y puedan impulsar en su entorno más próximo, cuentan. Estas son seis prácticas del Manual del Educación para un consumo sostenible de la UNESCO-UNEP coordinado para España y América Latina por la Fundación Ecología y Desarrollo, que pueden ayudar a conseguirlo:
+
+Consumir alimentos más frescos y menos procesados
+El consumo responsable se basa en dos máximas: consumir menos y que lo que se consuma sea lo más sostenible y solidario posible. En esa línea, se aconseja consumir los alimentos naturales que están mínimamente procesados y que, por ende, están lo más cerca posible de su sabor original y evitar aquellos fuera de estación. También es importante tener en cuenta la procedencia de los mismos ya que los que se importan de países lejanos resultan menos sostenibles puesto que es mayor la distancia que recorren hasta el destino final.
+
+Además implica elegir los productos, no sólo por su precio o su calidad, sino también porque son respetuosos con el medioambiente y porque las empresas que los elaboran cumplen con los derechos humanos.
+
+Usar sistemas de transporte que no contaminen
+Si las distancias son cortas, la bicicleta es una buena opción como medio de transporte más eficiente en el uso de energía. Otra opción es utilizar el vehículo de vez en cuando y decantarse por el transporte público que es una de las opciones que utilizan menos energía por pasajero.
+
+En el caso de los autos, se recomienda comprar los más eficientes y darles el mantenimiento adecuado.
+
+Premiar a las empresas con compromiso ecológico
+Apoyar a comercios que evitan el desperdicio de alimentos. En Paraguay está el ejemplo de una excelente practica sostenible denominada 'Salvemos la comida' emprendida por Casa Rica con el apoyo de la empresa social Mboja'o que busca disminuir el desperdicio de alimentos generado en el sector gastronómico y ayudar en la alimentación de personas en situación de vulnerabilidad.
+
+El objetivo es recuperar los alimentos en perfecto estado del mercado 'gourmet' y destinarlos a comedores sociales para que la comida pueda ser aprovechada por personas que necesitan. De esta forma se reduce el desperdicio de alimentos y también se beneficia a personas en situación de vulnerabilidad quienes disfrutan de los platos.
+
+Reducir el impacto como turistas
+El turismo ejerce un gran impacto en el mundo. ¿Qué se puede pensar de aquellos turistas que transforman los lugares de ensueño en basureros? Para ayudar a la economía local de destino, en el viaje conviene buscar alojamiento, posadas, restaurantes, casas rurales que sean administradas por gente del lugar que respete e impulse el medio ambiente y la cultura local.
+
+Una señal positiva es que el turismo sostenible está ganando adeptos. Por tanto, sumarse a esta ola significará elegir opciones de viaje que generen mayores beneficios para la población local como apoyando a los artesanos y comerciantes locales comprando 'souvenirs' elaborados en la localidad y con materiales autóctonos.
+
+Hacer un uso adecuado de los recursos naturales
+Ahorrar los  recursos con los que se tengan contacto diariamente como por ejemplo el cuidado del agua y la energía eléctrica. Con acciones que se pueden realizar día a día se puede disminuir su uso como por ejemplo comprar bombillas más eficientes, sustituir los  aparatos electrodomésticos viejos por otros que hagan un uso más eficiente de la energía y apagar las luces en habitaciones vacías.
+
+Recordar que su producción supone un impacto medioambiental significativo.
+
+Fomentar valores y campañas medioambientales
+El daño a la atmósfera y el cambio climático pareciera un problema de grandes dimensiones y la reacción podría ser ¿Qué puede hacer un individuo? Sin embargo, se podría revertir el daño ocasionado por el cambio climático siempre y cuando se haga el esfuerzo necesario para modificar la forma actual de consumir y producir.
+
+Una buena opción sería apoyar aquellas iniciativas de consumo sostenible, cuyos valores sean compatibles con uno, para hacerlo duradero en el tiempo. Por tanto hacer el cambio del consumo masivo que se aparte de las lógicas del mercado tradicional e impulse un modelo sostenible necesariamente tiene que alimentarse de la adopción de nuevos hábitos, y eso lleva tiempo y constancia.');
+
+
+
