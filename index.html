@@ -13,89 +13,44 @@
 <body>
   <header>
     <!-- Logo y Nombre -->
-    <img class="logo" src="./imagenes/logo.png" alt="Logo natulert" />
-    <h1 class="titulo">Natulert</h1>
+    <img class="logo_login" src="./imagenes/logo.png" alt="Logo natulert" />
+    <h3 class="titulo_login">Natulert</h3>
   </header>
   <section class="menu">
-      <!-- Menu -->
-  <div class="home">
-    <div class="item">
-      <a href="#" class="link">
-        <span> OPCIONES </span>
-        <svg viewBox="0 0 360 360" xml:space="preserve">
-          <g id="SVGRepo_iconCarrier">
-            <path
-              id="XMLID_225_"
-              d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
-            ></path>
-          </g>
-        </svg>
+    <!-- Menu -->
+  
       </a>
-      <div class="submenu">
-        <div class="submenu-item">
-          <a href="./index.html" class="submenu-link"> MAPA </a>
-        </div>
-        <div class="submenu-item">
-          <a href="./indexGuia.html" class="submenu-link"> GUIAS </a>
-        </div>
-        <div class="submenu-item">
-          <a href="#" class="submenu-link"> FORO </a>
-        </div>
-      </div>
     </div>
-  </div>
-
-    <h1 class="titulo_seccion">MAPA</h1>
-    <div class="card">
-      <p class="time-text">
-        <span class="time" id="time"></span>
-        <span class="time-sub-text" id="period"></span>
-      </p>
-      <p class="day-text" id="day"></p>
-      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" stroke-width="0"
-        fill="currentColor" stroke="currentColor" class="moon">
-        <path
-          d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z">
-        </path>
-        <path
-          d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z">
-        </path>
-      </svg>
+    
+ 
+      
+   
     </div>
   </section>
-  <main class="informacion">
-    <!-- Mapa filtro y botones -->
-    <section class="mapa">
-      <!-- Mapa -->
-      <div class="api">
-        <div id="map"></div>
-      </div>
-    </section>
-    <section class="btn_filtro">
-      <!-- Botones y filtro -->
-      <div class="container_contenido">
-        <form class="filtro">
-          <div>
-            <input id="check-1" type="checkbox" data-nivel="1" />
-            <label for="check-1">Nivel 1</label>
-          </div>
-          <div>
-            <input id="check-2" type="checkbox" data-nivel="2"/>
-            <label for="check-2">Nivel 2</label>
-          </div>
-          <div>
-            <input id="check-3" type="checkbox" data-nivel="3"/>
-            <label for="check-3">Nivel 3</label>
-          </div>
-        </form>
-        <div class="container_btn">
-          <button class="alerta" onclick="location.href='./indexCrear.html'">Crear Alerta</button>
-          <button class="alerta" onclick="location.href='./indexConsulta.html'">Consultar Alerta</button>
+  <section class="login-container">
+  
+ 
+    <form class="login-form" onsubmit="return loginUser(event)" action="conexion/validar.php" method="post">
+        
+       
+    <h2>Iniciar Sesión</h2>
+        
+        
+    <div class="form-group">
+          <label for="username">Usuario</label>       
+    <input type="text" id="username" required />
+  </div>
+   
+        <div class="form-group">
+    <label for="password">Contraseña</label>     
+    <input type="password" id="password" required />
         </div>
-      </div>
-    </section>
-  </main>
-  <footer class="footer">
+
+        <button type="submit" class="login-btn" onclick="location.href='./indexMapa.html'">Iniciar Sesión</button>
+    </form>
+    
+</section>
+<footer class="footer">
     <!-- informacion varia -->
     <a href="https://github.com/Thowers/Analisis">
       <img class="github" src="https://github.com/Thowers/Guia2TP/blob/main/IMAGENES/github.png?raw=true"
