@@ -281,3 +281,39 @@ window.addEventListener("click", function (event) {
     popup.style.display = "none";
   }
 });
+
+// Marcar/desmarcar estrella
+estrella.addEventListener("click", function () {
+    estrella.classList.toggle("marcar");
+  });
+
+  // Seleccionamos el botón de enviar comentario
+const enviarComentarioButton = document.getElementById("enviar-comentario");
+
+// Lógica para enviar comentario
+enviarComentarioButton.addEventListener("click", function () {
+  const comentario = document.getElementById("comentario").value;
+
+  if (comentario.trim() === "") {
+    alert("Por favor, escribe un comentario antes de enviar.");
+    return;
+  }
+
+  // Aquí puedes enviar el comentario a tu servidor
+  fetch('/enviar-comentario', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ comentario })
+  })
+  .then(response => {
+    if (response.ok) {
+      alert("Comentario enviado con éxito.");
+      document.getElementById("comentario").value = ""; // Limpiar el campo de comentarios
+    } else {
+      alert("Error al enviar el comentario.");
+    }
+  })
+  .catch(error => console.error('Error:', error));
+});
