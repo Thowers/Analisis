@@ -243,14 +243,30 @@ guiaImages.forEach((image) => {
 
     // Hacer la solicitud al servidor para obtener el contenido de la guía
     fetch(`http://localhost:3000/guia/${guiaId}`)
-      .then(response => response.json())
+    .then(response => {
+        if (!response.ok) {
+          throw new Error("No se pudo cargar la guía."); // Manejo de error si la respuesta no es válida
+        }
+        return response.json();
+      })
       .then(data => {
+        // Verificar si los datos recibidos son válidos
+        if (!data || !data.titulo_guia || !data.contenido) {
+          throw new Error("Datos de la guía incompletos."); // Manejo de error si faltan datos
+        }
+
         // Mostrar el contenido de la guía en el popup
-        popupTitle.innerText = data.titulo_guia;
-        popupText.innerText = data.contenido;
+        document.getElementById("popup-title").innerText = data.titulo_guia;
+        document.getElementById("popup-text").innerText = data.contenido;
         popup.style.display = "block";
       })
-      .catch(error => console.error('Error fetching guia:', error));
+      .catch(error => {
+        // Manejo de error personalizado si no se carga la guía
+        document.getElementById("popup-title").innerText = "Error";
+        document.getElementById("popup-text").innerText = error.message;
+        popup.style.display = "block";
+        console.error('Error fetching guia:', error);
+      });
   });
 });
 
