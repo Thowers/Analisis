@@ -96,13 +96,6 @@ app.listen(3000, () => {
     console.log('Servidor corriendo en el puerto 3000');
 });
 
-// Establecer la fecha actual en el campo de entrada
-document.addEventListener('DOMContentLoaded', function() {
-    const dateInput = document.getElementById('fecha_actual'); // Asegúrate de que el ID sea correcto
-    const today = new Date().toISOString().split('T')[0]; 
-    dateInput.value = today; 
-});
-
 // Función para registrar usuario
 async function registerUser(event) {
     event.preventDefault(); // Evita el envío del formulario por defecto

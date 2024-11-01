@@ -375,3 +375,10 @@ async function registerUser(event) {
 
 // Asegúrate de que el evento esté enlazado al formulario correcto
 document.getElementById('tuFormularioID').addEventListener('submit', registerUser);
+
+// Establecer la fecha actual en el campo de entrada
+document.addEventListener('DOMContentLoaded', function() {
+    const dateInput = document.getElementById('fecha_actual'); // Asegúrate de que el ID sea correcto
+    const today = new Date().toISOString().split('T')[0]; 
+    dateInput.value = today; 
+});
