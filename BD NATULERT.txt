@@ -10,11 +10,6 @@ ubicacion varchar(255) not null,
 estado varchar(50) null
 )Engine=InnoDB;
 
-CREATE TABLE guias (
-id_guia INT AUTO_INCREMENT PRIMARY KEY,
-titulo_guia VARCHAR(255) not null,
-contenido TEXT not null
-)Engine=InnoDB;
 CREATE TABLE usuario (
     id_usuario INT(11) NOT NULL AUTO_INCREMENT,
     nombre VARCHAR(30) NOT NULL,
@@ -25,8 +20,15 @@ CREATE TABLE usuario (
     tipo_usuario VARCHAR(20),
     PRIMARY KEY (id_usuario)
 );
+
 INSERT INTO usuarios (nombre, apellido, fecha, correo, clave, tipo_usuario) VALUES
 ('Juan', 'Pérez', '1990-05-14', 'juan.perez@example.com', 'password123', 'usuario');
+
+CREATE TABLE guias (
+id_guia INT AUTO_INCREMENT PRIMARY KEY,
+titulo_guia VARCHAR(255) not null,
+contenido TEXT not null
+)Engine=InnoDB;
 
 INSERT INTO guias(titulo_guia, contenido) VALUES ('Que es el medio ambiente y porqué es clave para la vida?','El medioambiente es el espacio en el que se desarrolla la vida de los distintos organismos favoreciendo su interacción. En él se encuentran tanto seres vivos como elementos sin vida y otros creados por la mano del hombre.
 Dentro de los primeros, agrupados bajo la denominación de factores bióticos, forman parte —además del ser humano y del resto de animales— toda la flora del planeta junto a los hongos y a pequeños organismos que cumplen funciones esenciales para el sostenimiento de la vida, y cuyo principal representante son las bacterias.
