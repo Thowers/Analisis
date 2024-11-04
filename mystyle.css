@@ -752,6 +752,17 @@ a{
   background-color: #218838; /* Color al pasar el mouse */
 }
 
+.seleccion-usuario {
+  margin-top: 20px;
+}
+
+#usuario-select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
 /*------------------------Index Login---------------------------*/
 
 .login-container {
