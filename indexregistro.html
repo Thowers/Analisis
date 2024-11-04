@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
   <link rel="stylesheet" href="./mystyle.css" />
-  <link rel="icon" href="./imagenes/logo.png" type="image/x-icon" />  
+  <link rel="icon" href="./imagenes/logo.png" type="image/x-icon" />
   <title>Natulert - Registro</title>
 </head>
 
@@ -18,9 +18,9 @@
   <section class="menu"></section>
  
   <section class="register-container">
-    <form class="register-form" onsubmit="return registerUser(event)">
-
+    <form class="register-form" action="conexion/db.php" method="POST">
       <h2>Registro de Usuario</h2>
+
 
       <div class="form-group">
         <label for="nombre">Nombre</label>
@@ -34,17 +34,17 @@
 
       <div class="form-group">
         <label for="fecha_actual">Fecha Actual</label>
-        <input type="date" id="fecha_actual" name="fecha_actual" required />
+        <input type="date" id="fecha_actual" name="fecha" required />
       </div>
     
       <div class="form-group">
-        <label for="correo">Correo Electrónico</label> <!-- Cambiado a 'correo' -->
-        <input type="email" id="correo" name="correo" required /> <!-- Cambiado a 'correo' -->
+        <label for="correo">Correo Electrónico</label>
+        <input type="email" id="correo" name="correo" required />
       </div>
 
       <div class="form-group">
-        <label for="clave">Contraseña</label> <!-- Cambiado a 'clave' -->
-        <input type="password" id="clave" name="clave" required /> <!-- Cambiado a 'clave' -->
+        <label for="clave">Contraseña</label>
+        <input type="password" id="clave" name="clave" required />
       </div>
 
       <div class="form-group">
