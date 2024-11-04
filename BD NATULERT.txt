@@ -66,12 +66,6 @@ comentario TEXT NOT NULL,
     FOREIGN KEY (id_guia) REFERENCES guias(id_guia)
 );
 
-INSERT INTO usuarios (nombre, apellido, fecha, correo, clave, tipo_usuario) VALUES
-('Juan', 'Pérez', '1990-05-14', 'juan.perez@example.com', 'password123', 'usuario');
-
-INSERT INTO usuarios (nombre, apellido, fecha, correo, clave, tipo_usuario) VALUES
-('Baltasar', 'Prado', '1998-10-22', 'balti.pprado@example.com', 'password123', 'usuario');
-
 INSERT INTO guias(titulo_guia, contenido) VALUES ('Que es el medio ambiente y porqué es clave para la vida?','El medioambiente es el espacio en el que se desarrolla la vida de los distintos organismos favoreciendo su interacción. En él se encuentran tanto seres vivos como elementos sin vida y otros creados por la mano del hombre.
 Dentro de los primeros, agrupados bajo la denominación de factores bióticos, forman parte —además del ser humano y del resto de animales— toda la flora del planeta junto a los hongos y a pequeños organismos que cumplen funciones esenciales para el sostenimiento de la vida, y cuyo principal representante son las bacterias.
 
