@@ -76,23 +76,4 @@ app.get('/guia/:id', (req, res) => {
     });
 });
 
-// Ruta para registrar un usuario
-app.post('/indexregistro', (req, res) => {
-    const { nombre, apellido, fecha, correo, clave } = req.body;
-    const tipo_usuario = 'usuario'; // Establecer tipo_usuario como 'usuario'
-    const sql = 'INSERT INTO usuario (nombre, apellido, fecha, correo, clave, tipo_usuario) VALUES (?, ?, ?, ?, ?, ?)';
-
-    db.query(sql, [nombre, apellido, fecha, correo, clave, tipo_usuario], (err, result) => {
-        if (err) {
-            console.error(err);
-            return res.status(500).json({ error: 'Error al registrar el usuario' });
-        }
-        res.json({ message: 'Usuario registrado con éxito' });
-    });
-});
-
-// Iniciar el servidor
-app.listen(3000, () => {
-    console.log('Servidor corriendo en el puerto 3000');
-});
 

@@ -11,14 +11,14 @@
 
 <body>
   <header>
-    <img class="logo_login" src="./imagenes/logo.png" alt="Logo natulert" />
+    <img class="logo_login" src="https://github.com/Thowers/Analisis/blob/main/imagenes/logo.png?raw=true" alt="Logo natulert" />
     <h3 class="titulo_login">Natulert</h3>
   </header>
 
   <section class="menu"></section>
  
   <section class="register-container">
-    <form class="register-form" action="conexion/db.php" method="POST">
+    <form class="register-form" action="conexion/registro_user.php" method="POST">
       <h2>Registro de Usuario</h2>
 
 
@@ -54,7 +54,7 @@
 
       <button type="submit" class="register-btn">Registrarse</button>
       <p>
-        <button type="button" class="register-btn" onclick="location.href='index.html'">Cancelar</button>
+        <button type="button" class="register-btn" onclick="location.href='http://127.0.0.1:5500/index.html'">Cancelar</button>
       </p>
     </form>
   </section>
