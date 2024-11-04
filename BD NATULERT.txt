@@ -21,15 +21,51 @@ CREATE TABLE usuario (
     PRIMARY KEY (id_usuario)
 );
 
-INSERT INTO usuarios (nombre, apellido, fecha, correo, clave, tipo_usuario) VALUES
-('Juan', 'Pérez', '1990-05-14', 'juan.perez@example.com', 'password123', 'usuario');
 
+drop TABLE alertas;
+DROP table guias;
 CREATE TABLE guias (
 id_guia INT AUTO_INCREMENT PRIMARY KEY,
 titulo_guia VARCHAR(255) not null,
 contenido TEXT not null
 )Engine=InnoDB;
 
+CREATE TABLE alertas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_usuario INT,
+    fecha DATE NOT NULL,
+    hora TIME NOT NULL,
+    nivel ENUM('bajo', 'medio', 'alto') NOT NULL,
+    descripcion TEXT NOT NULL,
+    ubicacion VARCHAR(255) NOT NULL,
+    estado ENUM('pendiente', 'resuelto') DEFAULT 'pendiente',
+    FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario)
+);
+
+CREATE TABLE foro (
+    id_foro INT AUTO_INCREMENT PRIMARY KEY,
+    id_usuario INT,
+    contenido TEXT NOT NULL,
+    FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario)
+);
+CREATE TABLE comentario_foro (
+    id_comentario_foro INT AUTO_INCREMENT PRIMARY KEY,
+    id_usuario INT,
+    id_foro INT,
+    contenido TEXT NOT NULL,
+    FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario),
+    FOREIGN KEY (id_foro) REFERENCES foro(id_foro)
+);
+CREATE TABLE comentario_guia (
+    id_comentario_guia INT AUTO_INCREMENT PRIMARY KEY,
+    id_usuario INT,
+    id_guia INT,
+    comentario TEXT NOT NULL,
+    FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario),
+    FOREIGN KEY (id_guia) REFERENCES guias(id_guia)
+);
+INSERT INTO usuarios (nombre, apellido, fecha, correo, clave, tipo_usuario) VALUES
+('Juan', 'Pérez', '1990-05-14', 'juan.perez@example.com', 'password123', 'usuario');
 INSERT INTO guias(titulo_guia, contenido) VALUES ('Que es el medio ambiente y porqué es clave para la vida?','El medioambiente es el espacio en el que se desarrolla la vida de los distintos organismos favoreciendo su interacción. En él se encuentran tanto seres vivos como elementos sin vida y otros creados por la mano del hombre.
 Dentro de los primeros, agrupados bajo la denominación de factores bióticos, forman parte —además del ser humano y del resto de animales— toda la flora del planeta junto a los hongos y a pequeños organismos que cumplen funciones esenciales para el sostenimiento de la vida, y cuyo principal representante son las bacterias.
 
