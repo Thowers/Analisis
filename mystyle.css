@@ -883,3 +883,99 @@ a{
 .form-group select option {
   color: #000000; /* Color para el texto del placeholder */
 }
+
+/* --------------------- FORO ------------------------------*/
+
+main.foro-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.publicaciones {
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.publicacion {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1em;
+  margin-bottom: 1em;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.publicacion .autor {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #4caf50;
+}
+
+.publicacion .contenido {
+  margin-top: 0.5em;
+  font-size: 1em;
+  color: #555;
+}
+
+.acciones {
+  display: flex;
+  justify-content: start;
+  gap: 1em;
+  margin-top: 0.8em;
+}
+
+.btn-like, .btn-dislike, .btn-comentar {
+  background-color: #e7e7e7;
+  border: none;
+  border-radius: 4px;
+  color: #333;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-like:hover {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.btn-dislike:hover {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.btn-comentar:hover {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+/* Caja de Comentarios */
+.comentarios {
+  margin-top: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+.comentario-input {
+  width: 100%;
+  padding: 0.8em;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 0.5em;
+}
+
+.btn-enviar-comentario {
+  align-self: flex-start;
+  background-color: #38A3A5;
+  color: #fff;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-enviar-comentario:hover {
+  background-color: #45a049;
+}
