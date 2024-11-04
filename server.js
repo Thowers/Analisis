@@ -50,15 +50,6 @@ app.get('/alertas', (req, res) => {
     });
 });
 
-// Ruta para obtener una guía por ID
-app.get("/api/guias/:id", (req, res) => {
-    const id = req.params.id;
-    db.query("SELECT * FROM guias WHERE id = ?", [id], (error, results) => {
-        if (error) return res.status(500).send("Error de base de datos");
-        res.json(results[0]); // Envía el primer resultado
-    });
-});
-
 // Ruta para obtener la guía por ID
 app.get('/guia/:id', (req, res) => {
     const guiaId = req.params.id;
@@ -76,4 +67,6 @@ app.get('/guia/:id', (req, res) => {
     });
 });
 
-
+app.listen(3000, () => {
+    console.log('Servidor corriendo en el puerto 3000');
+  });
