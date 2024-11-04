@@ -16,11 +16,10 @@
   </header>
 
   <section class="menu"></section>
- 
+
   <section class="register-container">
     <form class="register-form" action="conexion/registro_user.php" method="POST">
       <h2>Registro de Usuario</h2>
-
 
       <div class="form-group">
         <label for="nombre">Nombre</label>
@@ -36,7 +35,7 @@
         <label for="fecha_actual">Fecha Actual</label>
         <input type="date" id="fecha_actual" name="fecha" required />
       </div>
-    
+
       <div class="form-group">
         <label for="correo">Correo Electrónico</label>
         <input type="email" id="correo" name="correo" required />
@@ -44,7 +43,9 @@
 
       <div class="form-group">
         <label for="clave">Contraseña</label>
-        <input type="password" id="clave" name="clave" required />
+        <input type="password" id="clave" name="clave" required
+               pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])[A-Za-z\d\W_]{8,}$"
+               title="La contraseña debe tener al menos 8 caracteres, con al menos una letra mayúscula, una letra minúscula, un número y un carácter especial." />
       </div>
 
       <div class="form-group">
@@ -61,5 +62,22 @@
 
   <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
   <script src="./logica.js"></script>
+  
+  <script>
+    document.querySelector('.register-form').addEventListener('submit', function(event) {
+      const password = document.getElementById('clave').value;
+      const confirmPassword = document.getElementById('confirm_password').value;
+
+      // Verificar que la contraseña cumpla con los requisitos
+      const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])[A-Za-z\d\W_]{8,}$/;
+      if (!passwordRegex.test(password)) {
+        alert("La contraseña debe tener al menos 8 caracteres, con al menos una letra mayúscula, una letra minúscula, un número y un carácter especial.");
+        event.preventDefault(); // Prevenir envío del formulario
+      } else if (password !== confirmPassword) {
+        alert("Las contraseñas no coinciden.");
+        event.preventDefault(); // Prevenir envío del formulario
+      }
+    });
+  </script>
 </body>
 </html>
