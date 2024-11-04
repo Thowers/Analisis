@@ -1,0 +1,5 @@
+1) Entrar a la carpeta Xammp
+2) Buscar carpeta htdocs
+3) Agregar archivo indexregistro.php y estilos
+4) Crear carpeta conexion dentro de htdoc
+5) Agregar archivo db.php y registro_user.php
