@@ -40,6 +40,10 @@
         <label for="correo">Correo Electrónico</label>
         <input type="email" id="correo" name="correo" required />
       </div>
+      <div class="form-group">
+  <label for="usuario">Nombre de Usuario</label>
+  <input type="text" id="usuario" name="usuario" required />
+</div>
 
       <div class="form-group">
         <label for="clave">Contraseña</label>

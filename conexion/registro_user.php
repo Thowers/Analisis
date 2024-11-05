@@ -1,11 +1,11 @@
 <?php
-
  include 'db.php';
 
     $nombre = $_POST['nombre'];
     $apellido =$_POST['apellido'];
     $correo = $_POST['correo'];
-    $clave = $_POST['clave'];
+    $usuario = $_POST['usuario'];
+        $clave = $_POST['clave'];
     $fecha = date("Y-m-d");
     $tipo_usuario = "usuario"; // Asignar tipo de usuario
 
@@ -14,7 +14,7 @@
         $mensaje = "Las contraseñas no coinciden.";
     } else {
         // Insertar en la base de datos
-        $sql = "INSERT INTO usuario (nombre, apellido, correo, clave, fecha, tipo_usuario) VALUES ('$nombre', '$apellido', '$correo', '$clave', '$fecha', '$tipo_usuario')";
+        $sql = "INSERT INTO usuario (nombre, apellido, correo, clave, fecha, tipo_usuario, usuario) VALUES ('$nombre', '$apellido', '$correo', '$clave', '$fecha', '$tipo_usuario', '$usuario')";
 
     }
     $ejecutar = mysqli_query($conexion,$sql);
