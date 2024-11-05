@@ -104,6 +104,19 @@ app.post('/enviar-comentario', (req, res) => {
     });
 });
 
+// Ruta principal para mostrar la lista desplegable
+app.get('/', (req, res) => {
+    const query = 'SELECT id_usuario, nombre, apellido FROM usuario';
+    db.query(query, (err, results) => {
+        if (err) {
+            console.error('Error al obtener los datos:', err);
+            res.send('Error al obtener los datos');
+            return;
+        }
+        res.render('index', { usuarios: results });
+    });
+});
+
 
 app.listen(PORT, () => {
     console.log(`Servidor escuchando en http://localhost:${PORT}`);

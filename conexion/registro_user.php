@@ -5,7 +5,7 @@
     $apellido =$_POST['apellido'];
     $correo = $_POST['correo'];
     $usuario = $_POST['usuario'];
-        $clave = $_POST['clave'];
+    $clave = $_POST['clave'];
     $fecha = date("Y-m-d");
     $tipo_usuario = "usuario"; // Asignar tipo de usuario
 

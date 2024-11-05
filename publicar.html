@@ -1,152 +1,18 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./mystyle.css" />
-  <link rel="icon" href="./imagenes/logo.png" type="image/x-icon" />  
-  <title>Natulert - Foro</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Usuarios</title>
 </head>
-
 <body>
-  <header>
-    <!-- Logo y Nombre -->
-    <img class="logo" src="./imagenes/logo.png" alt="Logo natulert" />
-    <h1 class="titulo">Natulert</h1>
-  </header>
-  <section class="menu">
-      <!-- Menú -->
-      <div class="home">
-        <div class="item">
-          <a href="#" class="link">
-            <span>OPCIONES</span>
-            <svg viewBox="0 0 360 360" xml:space="preserve">
-              <g id="SVGRepo_iconCarrier">
-                <path id="XMLID_225_" d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"></path>
-              </g>
-            </svg>
-          </a>
-          <div class="submenu">
-            <div class="submenu-item">
-              <a href="./indexMapa.html" class="submenu-link">INICIO</a>
-            </div>
-            <div class="submenu-item">
-              <a href="./misPublicaciones.html" class="submenu-link">MIS PUBLICACIONES</a>
-            </div>
-            <div class="submenu-item">
-              <a href="./publicar.html" class="submenu-link">PUBLICAR</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    <h1 class="titulo_seccion">PUBLICAR</h1>
-    <div class="card">
-      <p class="time-text">
-        <span class="time" id="time"></span>
-        <span class="time-sub-text" id="period"></span>
-      </p>
-      <p class="day-text" id="day"></p>
-      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" stroke-width="0" fill="currentColor" stroke="currentColor" class="moon">
-        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"></path>
-        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"></path>
-      </svg>
-    </div>
-  </section>
-  
-  <main class="foro-container">
-    <!-- Publicaciones y comentarios -->
-    <section class="publicaciones">
-      <!-- Ejemplo de 10 publicaciones -->
-      <article class="publicacion">
-        <h2 class="autor">Camila Pérez</h2>
-        <p class="contenido">Hoy observé un grupo de aves migratorias en la reserva natural, es impresionante la diversidad que tenemos en nuestro país.</p>
-        <div class="acciones">
-          <button class="btn-like">👍 Like</button>
-          <button class="btn-dislike">👎 Dislike</button>
-        </div>
-      </article>
-      <article class="publicacion">
-        <h2 class="autor">Carlos Gómez</h2>
-        <p class="contenido">Recogí varias semillas de árboles nativos, ¡es hora de comenzar un nuevo proyecto de reforestación!</p>
-        <div class="acciones">
-          <button class="btn-like">👍 Like</button>
-          <button class="btn-dislike">👎 Dislike</button>
-        </div>
-      </article>
-      <article class="publicacion">
-        <h2 class="autor">Laura Rivera</h2>
-        <p class="contenido">Los ríos están más limpios tras las lluvias, sin embargo, hay que seguir cuidándolos de la contaminación.</p>
-        <div class="acciones">
-          <button class="btn-like">👍 Like</button>
-          <button class="btn-dislike">👎 Dislike</button>
-        </div>
-      </article>
-      <article class="publicacion">
-        <h2 class="autor">Mateo Ramírez</h2>
-        <p class="contenido">Planté tres nuevos árboles en mi vecindario, pequeños cambios pueden hacer una gran diferencia.</p>
-        <div class="acciones">
-          <button class="btn-like">👍 Like</button>
-          <button class="btn-dislike">👎 Dislike</button>
-        </div>
-      </article>
-      <article class="publicacion">
-        <h2 class="autor">Valentina Rojas</h2>
-        <p class="contenido">La caminata de observación de aves fue un éxito, vimos especies que no conocía. ¡Hay mucho por descubrir!</p>
-        <div class="acciones">
-          <button class="btn-like">👍 Like</button>
-          <button class="btn-dislike">👎 Dislike</button>
-        </div>
-      </article>
-      <article class="publicacion">
-        <h2 class="autor">Juan Pérez</h2>
-        <p class="contenido">Hoy me encontré con un grupo de tortugas en el lago, nuestra biodiversidad es increíble.</p>
-        <div class="acciones">
-          <button class="btn-like">👍 Like</button>
-          <button class="btn-dislike">👎 Dislike</button>
-        </div>
-      </article>
-      <article class="publicacion">
-        <h2 class="autor">Daniela Martínez</h2>
-        <p class="contenido">Reforesté una pequeña área cerca de mi casa con plantas nativas. Es gratificante verlas crecer.</p>
-        <div class="acciones">
-          <button class="btn-like">👍 Like</button>
-          <button class="btn-dislike">👎 Dislike</button>
-        </div>
-      </article>
-      <article class="publicacion">
-        <h2 class="autor">Andrés López</h2>
-        <p class="contenido">Participé en una limpieza de playa, es triste ver tanta basura, pero juntos podemos marcar la diferencia.</p>
-        <div class="acciones">
-          <button class="btn-like">👍 Like</button>
-          <button class="btn-dislike">👎 Dislike</button>
-        </div>
-      </article>
-      <article class="publicacion">
-        <h2 class="autor">Sofía Moreno</h2>
-        <p class="contenido">Aprendí sobre compostaje y estoy iniciando en casa, ¡es una gran forma de reciclar!</p>
-        <div class="acciones">
-          <button class="btn-like">👍 Like</button>
-          <button class="btn-dislike">👎 Dislike</button>
-        </div>
-      </article>
-      <article class="publicacion">
-        <h2 class="autor">Alejandro Sánchez</h2>
-        <p class="contenido">Realicé una caminata ecológica y disfruté del aire fresco. La naturaleza nos da tanto.</p>
-        <div class="acciones">
-          <button class="btn-like">👍 Like</button>
-          <button class="btn-dislike">👎 Dislike</button>
-        </div>
-      </article>
-    </section>
-  </main>
+    <h1>Seleccionar Usuario</h1>
 
-  <footer class="footer">
-    <!-- Información variada -->
-    <a href="https://github.com/Thowers/Analisis">
-      <img class="github" src="https://github.com/Thowers/Guia2TP/blob/main/IMAGENES/github.png?raw=true" alt="logo de github" />GitHub
-    </a>
-  </footer>
-  <script src="./logica.js"></script>
+    <!-- Lista desplegable de usuarios -->
+    <select id="usuarioSelect">
+        <option value="">Seleccione un usuario</option>
+    </select>
+
+    <script defer src="cargarUsuarios.js"></script> <!-- Archivo de JavaScript para cargar usuarios -->
 </body>
 </html>
