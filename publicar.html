@@ -3,15 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Usuarios</title>
+    <title>Publicar en el Foro</title>
 </head>
 <body>
-    <h1>Seleccionar Usuario</h1>
+    <h1>Publicar en el Foro</h1>
 
-    <!-- Lista desplegable de usuarios -->
-    <select id="usuarioSelect">
-        <option value="">Seleccione un usuario</option>
-    </select>
+    <!-- Formulario para publicar en el foro -->
+    <form id="publicarForm" action="/publicar" method="post">
+        <label for="usuarioSelect">Seleccionar Usuario:</label>
+        <select id="usuarioSelect" name="id_usuario">
+            <option value="">Seleccione un usuario</option>
+        </select>
+
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo" name="titulo" required>
+
+        <label for="contenido">Contenido:</label>
+        <textarea id="contenido" name="contenido" required></textarea>
+
+        <button type="submit">Publicar</button>
+    </form>
 
     <script defer src="cargarUsuarios.js"></script> <!-- Archivo de JavaScript para cargar usuarios -->
 </body>

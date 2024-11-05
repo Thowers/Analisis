@@ -117,6 +117,20 @@ app.get('/', (req, res) => {
     });
 });
 
+// Ruta para manejar la publicación en el foro
+app.post('/publicar', (req, res) => {
+    const { id_usuario, titulo, contenido } = req.body;
+    const query = 'INSERT INTO foro (id_usuario, titulo, contenido) VALUES (?, ?, ?)';
+
+    db.query(query, [id_usuario, titulo, contenido], (err, results) => {
+        if (err) {
+            console.error('Error al insertar datos en la base de datos:', err);
+            res.send('Error al publicar en el foro');
+            return;
+        }
+        res.send('Publicación realizada con éxito');
+    });
+});
 
 app.listen(PORT, () => {
     console.log(`Servidor escuchando en http://localhost:${PORT}`);
