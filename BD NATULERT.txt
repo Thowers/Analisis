@@ -52,6 +52,7 @@ FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario)
 CREATE TABLE foro (
 id_foro INT AUTO_INCREMENT PRIMARY KEY,
 id_usuario INT,
+titulo varchar(30);
 contenido TEXT NOT NULL,
 FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario)
 );
