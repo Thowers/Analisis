@@ -1,9 +1,12 @@
 ALTER TABLE usuario
 ADD COLUMN usuario VARCHAR(30);
 
+ALTER TABLE foro
+ADD COLUMN titulo VARCHAR(30);
 
 create database natulert;
 use natulert
+
 create table alertas(
 id int auto_increment primary key,
 fecha date not null,
