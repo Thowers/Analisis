@@ -88,10 +88,8 @@ app.get('/guia/:id', (req, res) => {
 // Ruta para manejar comentarios
 app.post('/enviar-comentario', (req, res) => {
     const { id_usuario, id_guia, comentario } = req.body;
-
     // Verifica que los datos recibidos son correctos
     console.log('Datos recibidos:', { id_usuario, id_guia, comentario });
-
     // Consulta para insertar el comentario en la tabla
     const sql = 'INSERT INTO comentario_guia (id_usuario, id_guia, comentario) VALUES (?, ?, ?)';
     db.query(sql, [id_usuario, id_guia, comentario], (error, results) => {

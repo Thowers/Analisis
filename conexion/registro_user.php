@@ -5,7 +5,7 @@
     $apellido =$_POST['apellido'];
     $correo = $_POST['correo'];
     $usuario = $_POST['usuario'];
-        $clave = $_POST['clave'];
+    $clave = $_POST['clave'];
     $fecha = date("Y-m-d");
     $tipo_usuario = "usuario"; // Asignar tipo de usuario
 
@@ -26,7 +26,7 @@
         window.location = "http://127.0.0.1:5500/index.html"
         </script>
         ';
-    }else {
+    }else{
         echo '
         <script>
         alert("Intentelo nuevamente");
