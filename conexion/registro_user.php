@@ -26,7 +26,7 @@
         window.location = "http://127.0.0.1:5500/index.html"
         </script>
         ';
-    }else {
+    }else{
         echo '
         <script>
         alert("Intentelo nuevamente");
