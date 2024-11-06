@@ -135,3 +135,36 @@ app.post('/publicar', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Servidor escuchando en http://localhost:${PORT}`);
   });
+
+  // Ruta para obtener todas las publicaciones del foro
+app.get('/publicaciones', (req, res) => {
+    const query = `
+        SELECT foro.titulo, foro.contenido, usuario.nombre, usuario.apellido 
+        FROM foro 
+        JOIN usuario ON foro.id_usuario = usuario.id_usuario
+    `;
+    db.query(query, (err, results) => {
+        if (err) {
+            console.error('Error al obtener publicaciones del foro:', err);
+            return res.status(500).json({ error: 'Error al obtener publicaciones del foro' });
+        }
+        res.json(results);
+    });
+});
+
+// Ruta para obtener las publicaciones de un usuario específico
+app.get('/mis-publicaciones/:id_usuario', (req, res) => {
+    const { id_usuario } = req.params;
+    const query = `
+        SELECT foro.titulo, foro.contenido 
+        FROM foro 
+        WHERE foro.id_usuario = ?
+    `;
+    db.query(query, [id_usuario], (err, results) => {
+        if (err) {
+            console.error('Error al obtener publicaciones del usuario:', err);
+            return res.status(500).json({ error: 'Error al obtener publicaciones del usuario' });
+        }
+        res.json(results);
+    });
+});
