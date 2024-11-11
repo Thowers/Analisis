@@ -5,46 +5,45 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
-  <link rel="stylesheet" href="./mystyle.css" />
+  <link rel="stylesheet" href="../Principal/mystyle.css" />
   <link rel="icon" href="./imagenes/logo.png" type="image/x-icon" />  
-  <title>Natulert - Crear Alerta</title>
+  <title>Natulert - Inicio</title>
 </head>
 
 <body>
   <header>
-    <!-- Logo y Nombre -->
-    <img class="logo" src="./imagenes/logo.png" alt="Logo natulert" />
+    <img class="logo" src="../imagenes/logo.png" alt="Logo natulert" />
     <h1 class="titulo">Natulert</h1>
   </header>
   <section class="menu">
-          <!-- Menu -->
-          <div class="home">
-            <div class="item">
-              <a href="#" class="link">
-                <span> OPCIONES </span>
-                <svg viewBox="0 0 360 360" xml:space="preserve">
-                  <g id="SVGRepo_iconCarrier">
-                    <path
-                      id="XMLID_225_"
-                      d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
-                    ></path>
-                  </g>
-                </svg>
-              </a>
-              <div class="submenu">
-                <div class="submenu-item">
-                  <a href="./indexMapa.html" class="submenu-link"> MAPA </a>
-                </div>
-                <div class="submenu-item">
-                  <a href="./indexGuia.html" class="submenu-link"> GUIAS </a>
-                </div>
-                <div class="submenu-item">
-                  <a href="./indexForo.html" class="submenu-link"> FORO </a>
-                </div>
-              </div>
+      <!-- Menu -->
+      <div class="home">
+        <div class="item">
+          <a href="#" class="link">
+            <span> OPCIONES </span>
+            <svg viewBox="0 0 360 360" xml:space="preserve">
+              <g id="SVGRepo_iconCarrier">
+                <path
+                  id="XMLID_225_"
+                  d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                ></path>
+              </g>
+            </svg>
+          </a>
+          <div class="submenu">
+            <div class="submenu-item">
+              <a href="../Principal/indexMapa.html" class="submenu-link"> MAPA </a>
+            </div>
+            <div class="submenu-item">
+              <a href="../Guias/indexGuia.html" class="submenu-link"> GUIAS </a>
+            </div>
+            <div class="submenu-item">
+              <a href="../Foro/indexForo.html" class="submenu-link"> FORO </a>
             </div>
           </div>
-    <h1 class="titulo_seccion">CREAR ALERTA</h1>
+        </div>
+      </div>
+    <h1 class="titulo_seccion">Consultar alerta</h1>
     <div class="card">
       <p class="time-text">
         <span class="time" id="time"></span>
@@ -63,7 +62,7 @@
     </div>
   </section>
   <main class="informacion">
-    <!-- Mapa y formulario para crear alerta -->
+    <!-- Mapa filtro y botones -->
     <section class="mapa">
       <!-- Mapa -->
       <div class="api">
@@ -71,47 +70,38 @@
       </div>
     </section>
     <section class="btn_filtro">
-      <!-- Formulario para crear alerta -->
+      <!-- Botones y filtro -->
       <div class="container_contenido">
-        <form class="crear-alerta" id="crear_alertas">
+        <form class="filtro">
           <div>
-            <label for="fecha">Fecha:</label>
-            <input id="fecha" type="date" />
+            <input id="check-1" type="checkbox" data-nivel="1" />
+            <label for="check-1">Nivel 1</label>
           </div>
           <div>
-            <label for="hora">Hora:</label>
-            <input id="hora" type="time" />
+            <input id="check-2" type="checkbox" data-nivel="2"/>
+            <label for="check-2">Nivel 2</label>
           </div>
           <div>
-            <label for="nivel">Nivel de Alerta:</label>
-            <select id="nivel">
-              <option value="1">Bajo</option>
-              <option value="2">Medio</option>
-              <option value="3">Alto</option>
-            </select>
+            <input id="check-3" type="checkbox" data-nivel="3"/>
+            <label for="check-3">Nivel 3</label>
           </div>
-          <div>
-            <label for="descripcion">Descripción:</label>
-            <textarea id="descripcion"></textarea>
-          </div>
-          <input id="ubicacion" type="hidden">
         </form>
         <div class="container_btn">
-            <button class="alerta" type="button" form="crear_alertas">Crear Alerta</button>
-            <button class="alerta" onclick="location.href='indexMapa.html'">Cancelar</button>
+          <button class="alerta" onclick="location.href='../CrearAlerta/indexCrear.html'">Crear Alerta</button>
+          <button class="alerta" onclick="location.href='../ConsultarAlerta/indexConsulta.html'">Consultar Alerta</button>
         </div>
       </div>
     </section>
   </main>
   <footer class="footer">
-    <!-- Información adicional -->
+    <!-- informacion varia -->
     <a href="https://github.com/Thowers/Analisis">
       <img class="github" src="https://github.com/Thowers/Guia2TP/blob/main/IMAGENES/github.png?raw=true"
         alt="logo de github" />GitHub
     </a>
   </footer>
   <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
-  <script src="./logica.js"></script>
+  <script src="../Principal/logica.js"></script>
 </body>
 
 </html>

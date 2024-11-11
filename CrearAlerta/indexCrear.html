@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./mystyle.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+  <link rel="stylesheet" href="../CrearAlerta/mystyle.css" />
   <link rel="icon" href="./imagenes/logo.png" type="image/x-icon" />  
-  <title>Natulert - Consultar Alerta</title>
+  <title>Natulert - Crear Alerta</title>
 </head>
 
 <body>
   <header>
-    <img class="logo" src="./imagenes/logo.png" alt="Logo natulert" />
+    <img class="logo" src="../imagenes/logo.png" alt="Logo natulert" />
     <h1 class="titulo">Natulert</h1>
   </header>
   <section class="menu">
@@ -32,13 +32,13 @@
           </a>
           <div class="submenu">
             <div class="submenu-item">
-              <a href="./indexMapa.html" class="submenu-link"> MAPA </a>
+              <a href="../Principal/indexMapa.html" class="submenu-link"> MAPA </a>
             </div>
             <div class="submenu-item">
-              <a href="./indexGuia.html" class="submenu-link"> GUIAS </a>
+              <a href="../Guias/indexGuia.html" class="submenu-link"> GUIAS </a>
             </div>
             <div class="submenu-item">
-              <a href="./indexForo.html" class="submenu-link"> FORO </a>
+              <a href="../Foro/indexForo.html" class="submenu-link"> FORO </a>
             </div>
           </div>
         </div>
@@ -62,37 +62,55 @@
     </div>
   </section>
   <main class="informacion">
+    <!-- Mapa y formulario para crear alerta -->
     <section class="mapa">
-      <div class="list_alert">
-        <label for="list_alert_selector">Selecciona una alerta:</label>
-        <select id="list_alert_selector">
-          <option value="">Selecciona una alerta</option>
-        </select>
-      </div>
       <!-- Mapa -->
       <div class="api">
         <div id="map"></div>
-      </div>            
-    </section>
-    <section>
-      <div class="container_contenido">
-        <div class="container_btn">
-          <button class="alerta" onclick="location.href='indexMapa.html'">Volver</button>
       </div>
+    </section>
+    <section class="btn_filtro">
+      <!-- Formulario para crear alerta -->
+      <div class="container_contenido">
+        <form class="crear-alerta" id="crear_alertas">
+          <div>
+            <label for="fecha">Fecha:</label>
+            <input id="fecha" type="date" />
+          </div>
+          <div>
+            <label for="hora">Hora:</label>
+            <input id="hora" type="time" />
+          </div>
+          <div>
+            <label for="nivel">Nivel de Alerta:</label>
+            <select id="nivel">
+              <option value="1">Bajo</option>
+              <option value="2">Medio</option>
+              <option value="3">Alto</option>
+            </select>
+          </div>
+          <div>
+            <label for="descripcion">Descripción:</label>
+            <textarea id="descripcion"></textarea>
+          </div>
+          <input id="ubicacion" type="hidden">
+        </form>
+        <div class="container_btn">
+            <button class="alerta" type="button" form="crear_alertas">Crear Alerta</button>
+            <button class="alerta" onclick="location.href='../Principal/indexMapa.html'">Cancelar</button>
+        </div>
       </div>
     </section>
   </main>
   <footer class="footer">
-    <!-- informacion varia -->
+    <!-- Información adicional -->
     <a href="https://github.com/Thowers/Analisis">
       <img class="github" src="https://github.com/Thowers/Guia2TP/blob/main/IMAGENES/github.png?raw=true"
         alt="logo de github" />GitHub
     </a>
   </footer>
   <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
-  <script src="./logica.js"></script>
-
+  <script src="../CrearAlerta/logica.js"></script>
 </body>
 
 </html>
-
